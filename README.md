@@ -20,13 +20,11 @@ To start the development server with hot-reload, run the following command:
 yarn dev
 ```
 
-The server will be accessible at [http://localhost:3000](http://localhost:3000):
-
+The server will be accessible at [http://localhost:3001](http://localhost:3001):
 
 ## Building for Production
 
 The app is automatically built for production using github actions. The built files are then deployed to remote server. The CI/CD pipeline is configured in the `.github/workflows` directory and currently runs when a push is made to the `main` branch.
-
 
 ## 📑 License
 

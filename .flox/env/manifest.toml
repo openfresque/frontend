@@ -15,8 +15,8 @@ version = 1
 ##  $ flox show gum     <- show all versions of a package
 ## -------------------------------------------------------------------
 [install]
-yarn.pkg-path = "yarn-berry"
-yarn.version = "4.9.1"
+nodejs_22.pkg-path = "nodejs_22"
+yarn.pkg-path = "yarn"
 
 
 ## Environment Variables ---------------------------------------------
