@@ -67,15 +67,15 @@
     "sections": {
       "interest": {
         "title": "Quel est l'intérêt de Trouver une Fresque ?",
-        "description": "Trouver une Fresque est une plateforme qui permet de trouver un atelier de type Fresque dans son département. Sont actuellement recensés les ateliers suivants : Fresque du Climat, Atelier 2tonnes, Fresque de la Diversité, Fresque Océane, Fresque de la Construction, Fresque Agri'Alim, Fresque des Nouveaux Récits, Fresque de la Mobilité, Fresque de l'Alimentation, Atelier Inventons Nos Vies Bas Carbone, Atelier OGRE, Fresque de l'Eau, Fresque de l'Économie Circulaire, Ateliers Futurs Proches, Fresque du Textile, Fresque des Déchets, Fresque des Frontières Planétaires, Atelier Horizons Décarbonés, Atelier 2030 Glorieuses, Fresque de la Biodiversité, Fresque du Sexisme, Fresque du Numérique, Puzzle Climat, Fresque de la Finance, Fresque de la RSE, Cyber Fresque, Fresque du Plastique, Fresque du Bénévolat. La réservation d'un atelier s'effectue via les plateformes de billetique associées. Nous ne sommes affiliés avec aucune de ces structures."
+        "description": "Trouver une Fresque est une plateforme qui permet de trouver un atelier de type Fresque dans son département. Sont actuellement recensés les ateliers suivants : Fresque du Climat, Atelier 2tonnes, Fresque de la Diversité, Fresque Océane, Fresque de la Construction, Fresque Agri'Alim, Fresque des Nouveaux Récits, Fresque de la Mobilité, Fresque de l'Alimentation, Atelier Inventons Nos Vies Bas Carbone, Atelier OGRE, Fresque de l'Eau, Fresque de l'Économie Circulaire, Ateliers Futurs Proches, Fresque du Textile, Fresque des Déchets, Fresque des Frontières Planétaires, Atelier Horizons Décarbonés, Atelier 2030 Glorieuses, Fresque de la Biodiversité, Fresque du Sexisme, Fresque du Numérique, Puzzle Climat, Fresque de la Finance, Fresque de la RSE, Atelier des Transitions Urbaines, Cyber Fresque, Fresque du Plastique, Fresque du Bénévolat. La réservation d'un atelier s'effectue via les plateformes de billetique associées. Nous ne sommes affiliés avec aucune de ces structures."
       },
       "functionality": {
         "title": "Comment fonctionne Trouver une Fresque ?",
-        "description": "Les algorithmes de Trouver une Fresque analysent les différentes plateformes de réservation d'ateliers Fresque (Billetweb.fr, Eventbrite.fr, Fresqueduclimat.org, Lafresquedeleconomiecirculaire.com) afin de les agréger, et rendre leur recherche plus accessible. La liste des ateliers recensés sur notre plateforme n'est PAS exhaustive."
+        "description": "Les algorithmes de Trouver une Fresque analysent les différentes plateformes de réservation d'ateliers Fresque (Billetweb.fr, Eventbrite.fr, Fresqueduclimat.org) afin de les agréger, et rendre leur recherche plus accessible. La liste des ateliers recensés sur notre plateforme n'est PAS exhaustive."
       },
       "non_profit": {
         "title": "Trouver une Fresque est-il à but non lucratif ?",
-        "description": "Oui, Trouver une Fresque est à but non lucratif. La plateforme est gratuite, sans pub et il n'est pas nécessaire de s'inscrire pour l'utiliser. Nous sommes conformes au RGPD en ne stockant aucune donnée personnelle, et conformes à la directive européenne sur les cookies en ne stockant pas de cookies. Les <a href='https://github.com/trouver-une-fresque/trouver-une-fresque-scraper'>sources sont disponibles librement</a>."
+        "description": "Oui, Trouver une Fresque est à but non lucratif. La plateforme est gratuite, sans pub et il n'est pas nécessaire de s'inscrire pour l'utiliser. Nous sommes conformes au RGPD en ne stockant aucune donnée personnelle, et conformes à la directive européenne sur les cookies en ne stockant pas de cookies. Les <a href='https://openfresque/trouver-une-fresque-scraper'>sources sont disponibles librement</a>."
       },
       "support": {
         "title": "Comment puis-je soutenir le développement de la plateforme ?",
@@ -83,7 +83,7 @@
       },
       "help": {
         "title": "Au secours, j'ai publié un évènement Fresque, qui n'apparaît pas sur Trouver une Fresque !",
-        "description": "Votre évènement ne rassemble pas toutes les conditions pour être récupéré de manière automatique. Merci de le modifier sur la plateforme originale après avoir lu notre <a href='https://github.com/trouver-une-fresque/trouver-une-fresque/blob/main/TUTORIAL.md'>guide à l'attention des organisateurs de fresques</a>."
+        "description": "Votre évènement ne rassemble pas toutes les conditions pour être récupéré de manière automatique. Merci de le modifier sur la plateforme originale après avoir lu notre <a href='https://github.com/openfresque/trouver-une-fresque/blob/main/TUTORIAL.md'>guide à l'attention des organisateurs de fresques</a>."
       }
     }
   },
@@ -100,7 +100,7 @@
       },
       "license": {
         "title": "Licence",
-        "content": "<a href='https://github.com/trouver-une-fresque/multiworkshop-taskforce-front/blob/main/LICENSE'>AGPL-3.0</a>"
+        "content": "<a href='https://github.com/openfresque/multiworkshop-taskforce-front/blob/main/LICENSE'>AGPL-3.0</a>"
       }
     }
   },
@@ -180,6 +180,10 @@
     "FresqueRSE": {
       "name": "Fresque de la RSE",
       "description": "Contribuer à une entreprise positive, éthique et durable et devenez vous aussi acteur-actrice du changement"
+    },
+    "AtelierDesTransitionsUrbaines": {
+      "name": "Atelier des Transitions Urbaines",
+      "description": "En équipe, découvrez les solutions les plus efficaces pour concevoir un quartier résilient, heureux, et décarboné."
     },
     "2tonnes": {
       "name": "Atelier 2tonnes",

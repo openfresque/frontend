@@ -67,15 +67,15 @@
     "sections": {
       "interest": {
         "title": "¿Cuál es el objetivo de Encuentra un Mural?",
-        "description": "Encuentra un Mural es una plataforma que permite encontrar un taller tipo Mural cerca de un lugar. Actualmente, se registran los siguientes talleres: Mural del Clima, Taller 2toneladas, Mural de la Diversidad, Mural de los Océanos, Mural de la Construcción, Mural de Agri'Alim, Mural de los Nuevos Relatos, Mural de la Movilidad, Mural de la Alimentación, Taller Inventemos Nuestras Vidas Bajo en Carbono, Taller OGRE, Mural del Agua, Mural de la Economía Circular, Mural de Futuros Cercanos, Mural del Textil, Mural de los Residuos, Mural de las Fronteras Planetarias, Taller Horizontes Descarbonizados, Taller 2030 Gloriosas, Mural de la Biodiversidad, Mural del Sexismo, Mural de lo Digital, Puzzle Clima, Mural de las Finanzas, Mural de la RSE, Cyber Mural, Mural del Plástico, Mural del Voluntariado. La reserva de un taller se realiza a través de las plataformas de venta de entradas asociadas. No estamos afiliados con ninguna de estas estructuras."
+        "description": "Encuentra un Mural es una plataforma que permite encontrar un taller tipo Mural cerca de un lugar. Actualmente, se registran los siguientes talleres: Mural del Clima, Taller 2toneladas, Mural de la Diversidad, Mural de los Océanos, Mural de la Construcción, Mural de Agri'Alim, Mural de los Nuevos Relatos, Mural de la Movilidad, Mural de la Alimentación, Taller Inventemos Nuestras Vidas Bajo en Carbono, Taller OGRE, Mural del Agua, Mural de la Economía Circular, Mural de Futuros Cercanos, Mural del Textil, Mural de los Residuos, Mural de las Fronteras Planetarias, Taller Horizontes Descarbonizados, Taller 2030 Gloriosas, Mural de la Biodiversidad, Mural del Sexismo, Mural de lo Digital, Puzzle Clima, Mural de las Finanzas, Mural de la RSE, Taller Sobre Transiciones Urbanas, Cyber Mural, Mural del Plástico, Mural del Voluntariado. La reserva de un taller se realiza a través de las plataformas de venta de entradas asociadas. No estamos afiliados con ninguna de estas estructuras."
       },
       "functionality": {
         "title": "¿Cómo funciona Encuentra un Mural?",
-        "description": "Los algoritmos de Encuentra un Mural analizan las diferentes plataformas de reserva de talleres-mural (Billetweb.fr, Eventbrite.fr, Fresqueduclimat.org, Lafresquedeleconomiecirculaire.com) para agregarlas y hacer su búsqueda más accesible. La lista de talleres registrados en nuestra plataforma NO es exhaustiva."
+        "description": "Los algoritmos de Encuentra un Mural analizan las diferentes plataformas de reserva de talleres-mural (Billetweb.fr, Eventbrite.fr, Fresqueduclimat.org) para agregarlas y hacer su búsqueda más accesible. La lista de talleres registrados en nuestra plataforma NO es exhaustiva."
       },
       "non_profit": {
         "title": "¿Encuentra un Mural es sin fines de lucro?",
-        "description": "Sí, Encuentra un Mural es sin fines de lucro. La plataforma es gratuita, sin publicidad y no es necesario registrarse para usarla. Cumplimos con el Reglamento General de Protección de Datos de la Unión Europea al no almacenar ningún dato personal, y cumplimos con la directiva europea sobre cookies al no almacenar cookies. Las <a href='https://github.com/trouver-une-fresque/trouver-une-fresque-scraper'>fuentes están disponibles libremente</a>."
+        "description": "Sí, Encuentra un Mural es sin fines de lucro. La plataforma es gratuita, sin publicidad y no es necesario registrarse para usarla. Cumplimos con el Reglamento General de Protección de Datos de la Unión Europea al no almacenar ningún dato personal, y cumplimos con la directiva europea sobre cookies al no almacenar cookies. Las <a href='https://github.com/openfresque/trouver-une-fresque-scraper'>fuentes están disponibles libremente</a>."
       },
       "support": {
         "title": "¿Cómo puedo apoyar el desarrollo de la plataforma?",
@@ -83,7 +83,7 @@
       },
       "help": {
         "title": "¡Ayuda, he publicado un evento de un taller-mural, que no aparece en Encuentra un Mural!",
-        "description": "Su evento no cumple con todas las condiciones para ser recuperado automáticamente. Por favor, modifíquelo en la plataforma original después de leer nuestra <a href='https://github.com/trouver-une-fresque/trouver-une-fresque/blob/main/TUTORIAL.md'>guía para organizadores de talleres-mural</a>."
+        "description": "Su evento no cumple con todas las condiciones para ser recuperado automáticamente. Por favor, modifíquelo en la plataforma original después de leer nuestra <a href='https://github.com/openfresque/trouver-une-fresque/blob/main/TUTORIAL.md'>guía para organizadores de talleres-mural</a>."
       }
     }
   },
@@ -100,7 +100,7 @@
       },
       "license": {
         "title": "Licencia",
-        "content": "<a href='https://github.com/trouver-une-fresque/multiworkshop-taskforce-front/blob/main/LICENSE'>AGPL-3.0</a>"
+        "content": "<a href='https://github.com/openfresque/multiworkshop-taskforce-front/blob/main/LICENSE'>AGPL-3.0</a>"
       }
     }
   },
@@ -180,6 +180,10 @@
     "FresqueRSE": {
       "name": "Mural de la RSE",
       "description": "Contribuir a una empresa positiva, ética y sostenible y conviértete también en agente de cambio"
+    },
+    "AtelierDesTransitionsUrbaines": {
+      "name": "Taller Sobre Transiciones Urbanas",
+      "description": "Como equipo, descubran las soluciones más eficaces para diseñar un barrio resiliente, feliz y libre de carbono"
     },
     "2tonnes": {
       "name": "Taller 2toneladas",

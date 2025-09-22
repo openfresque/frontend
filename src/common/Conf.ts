@@ -165,6 +165,14 @@ export const ATELIERS: Record<number, Atelier> = {
     promoted: true,
     website: 'https://fresquedelarse.org/',
   },
+  19: {
+    code: 'AtelierDesTransitionsUrbaines',
+    logo: '/assets/images/logo/logo_atelierDesTransitionsUrbaines.webp',
+    name: i18n.global.t('workshops.AtelierDesTransitionsUrbaines.name'),
+    description: i18n.global.t('workshops.AtelierDesTransitionsUrbaines.description'),
+    promoted: true,
+    website: 'https://www.ateliertransitionsurbaines.org/',
+  },
   100: {
     code: '2tonnes',
     logo: '/assets/images/logo/logo_2tonnes.webp',

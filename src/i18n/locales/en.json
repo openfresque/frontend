@@ -67,15 +67,15 @@
     "sections": {
       "interest": {
         "title": "What is the goal of Find a Fresk?",
-        "description": "Find a Fresk is a platform that allows you to find a Fresk-type workshop in your department. Currently listed workshops include: Fresque du Climat, Atelier 2tonnes, Fresque de la Diversité, Fresque Océane, Fresque de la Construction, Fresque Agri'Alim, Fresque des Nouveaux Récits, Fresque de la Mobilité, Fresque de l'Alimentation, Atelier Inventons Nos Vies Bas Carbone, Atelier OGRE, Fresque de l'Eau, Fresque de l'Économie Circulaire, Ateliers Futurs Proches, Fresque du Textile, Fresque des Déchets, Fresque des Frontières Planétaires, Atelier Horizons Décarbonés, Atelier 2030 Glorieuses, Fresque de la Biodiversité, Fresque du Sexisme, Fresque du Numérique, Puzzle Climat, Fresque de la Finance, Fresque de la RSE, Cyber Fresque, Fresque du Plastique, Fresque du Bénévolat. Workshop reservations are made through associated ticketing platforms. We are not affiliated with any of these structures."
+        "description": "Find a Fresk is a platform that allows you to find a Fresk-type workshop in your department. Currently listed workshops include: Fresque du Climat, Atelier 2tonnes, Fresque de la Diversité, Fresque Océane, Fresque de la Construction, Fresque Agri'Alim, Fresque des Nouveaux Récits, Fresque de la Mobilité, Fresque de l'Alimentation, Atelier Inventons Nos Vies Bas Carbone, Atelier OGRE, Fresque de l'Eau, Fresque de l'Économie Circulaire, Ateliers Futurs Proches, Fresque du Textile, Fresque des Déchets, Fresque des Frontières Planétaires, Atelier Horizons Décarbonés, Atelier 2030 Glorieuses, Fresque de la Biodiversité, Fresque du Sexisme, Fresque du Numérique, Puzzle Climat, Fresque de la Finance, Fresque de la RSE, Atelier des Transitions Urbaines, Cyber Fresque, Fresque du Plastique, Fresque du Bénévolat. Workshop reservations are made through associated ticketing platforms. We are not affiliated with any of these structures."
       },
       "functionality": {
         "title": "How does Find a Fresk work?",
-        "description": "Find a Fresk's algorithms analyze various Fresk workshop reservation platforms (Billetweb.fr, Eventbrite.fr, Fresqueduclimat.org, Lafresquedeleconomiecirculaire.com) to aggregate them and make their search more accessible. The list of workshops on our platform is NOT exhaustive."
+        "description": "Find a Fresk's algorithms analyze various Fresk workshop reservation platforms (Billetweb.fr, Eventbrite.fr, Fresqueduclimat.org) to aggregate them and make their search more accessible. The list of workshops on our platform is NOT exhaustive."
       },
       "non_profit": {
         "title": "Is Find a Fresk non-profit?",
-        "description": "Yes, Find a Fresk is non-profit. The platform is free, ad-free, and does not require registration. We comply with GDPR by not storing any personal data and comply with the European cookie directive by not storing cookies. The <a href='https://github.com/trouver-une-fresque/trouver-une-fresque-scraper'>source code is freely available</a>."
+        "description": "Yes, Find a Fresk is non-profit. The platform is free, ad-free, and does not require registration. We comply with GDPR by not storing any personal data and comply with the European cookie directive by not storing cookies. The <a href='https://github.com/openfresque/trouver-une-fresque-scraper'>source code is freely available</a>."
       },
       "support": {
         "title": "How can I support the platform's development?",
@@ -83,7 +83,7 @@
       },
       "help": {
         "title": "Help! I published a Fresk event that doesn't appear on Find a Fresk!",
-        "description": "Your event does not meet all the conditions to be automatically retrieved. Please modify it on the original platform after reading our <a href='https://github.com/trouver-une-fresque/trouver-une-fresque/blob/main/TUTORIAL.md'>guide for Fresk organizers</a>."
+        "description": "Your event does not meet all the conditions to be automatically retrieved. Please modify it on the original platform after reading our <a href='https://github.com/openfresque/trouver-une-fresque/blob/main/TUTORIAL.md'>guide for Fresk organizers</a>."
       }
     }
   },
@@ -100,7 +100,7 @@
       },
       "license": {
         "title": "License",
-        "content": "<a href='https://github.com/trouver-une-fresque/multiworkshop-taskforce-front/blob/main/LICENSE'>AGPL-3.0</a>"
+        "content": "<a href='https://github.com/openfresque/multiworkshop-taskforce-front/blob/main/LICENSE'>AGPL-3.0</a>"
       }
     }
   },
@@ -180,6 +180,10 @@
     "FresqueRSE": {
       "name": "CSR Fresk",
       "description": "Contribute to a positive, ethical, and sustainable company and become an actor of change yourself"
+    },
+    "AtelierDesTransitionsUrbaines": {
+      "name": "Urban Transitions Workshop",
+      "description": "As a team, discover the most effective solutions for designing a resilient, happy, and carbon-free neighborhood"
     },
     "2tonnes": {
       "name": "2tonnes Workshop",
