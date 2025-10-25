@@ -200,6 +200,10 @@
       "name": "Cyber Fresk",
       "description": "Demystify cybersecurity and boost your digital hygiene!"
     },
+    "FresqueEntrepriseRegenerative": {
+      "name": "Fresque de l'entreprise régénérative",
+      "description": "Philosophy and practical method for organisations and territories seeking resilience"
+    },
     "FresqueClimat": {
       "name": "Climate Fresk",
       "description": "Do you want to act for the climate but don't have the time to become a climatologist?"
@@ -244,13 +248,21 @@
       "name": "Notre Tour",
       "description": "Take ecological issues into your own hands"
     },
-    "PlanetC": {
+    "PlanetCi": {
       "name": "Planet C Play Again",
       "description": "Rethink your beliefs and be empowered as an architect of change"
     },
     "FresqueDuSol": {
       "name": "The Soil Collage",
       "description": "Understand the complexity of soil impacts to better protect it"
+    },
+    "AdACC": {
+      "name": "Les Ateliers de l'Adaptation au Changement Climatique",
+      "description": "Method for collectively making the best possible choices in the face of climate change"
+    },
+    "FresqueBonheurDurablePartage": {
+      "name": "Fresque du Bonheur Durable et Partage",
+      "description": "Play to become and make others a little happier"
     }
   },
   "talkAboutIt": {

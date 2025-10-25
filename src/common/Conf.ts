@@ -205,6 +205,14 @@ export const ATELIERS: Record<number, Atelier> = {
     promoted: true,
     website: 'https://www.eventbrite.fr/o/senscyb-89802295343',
   },
+  105: {
+    code: 'FresqueEntrepriseRegenerative',
+    logo: '/assets/images/logo/logo_FresqueEntrepriseRegenerative.png',
+    name: i18n.global.t('workshops.FresqueEntrepriseRegenerative.name'),
+    description: i18n.global.t('workshops.FresqueEntrepriseRegenerative.description'),
+    promoted: true,
+    website: 'https://www.fresquedelentrepriseregenerative.fr/',
+  },
   200: {
     code: 'FresqueClimat',
     logo: '/assets/images/logo/logo_fresqueClimat.png',
@@ -308,6 +316,22 @@ export const ATELIERS: Record<number, Atelier> = {
     description: i18n.global.t('workshops.FresqueDuSol.description'),
     promoted: true,
     website: 'https://fresquedusol.com/',
+  },
+  802: {
+    code: 'AdACC',
+    logo: '/assets/images/logo/logo_AdACC.png',
+    name: i18n.global.t('workshops.AdACC.name'),
+    description: i18n.global.t('workshops.AdACC.description'),
+    promoted: true,
+    website: 'https://ateliers-adaptationclimat.fr/',
+  },
+  803: {
+    code: 'FresqueBonheurDurablePartage',
+    logo: '/assets/images/logo/logo_FresqueBonheurDurablePartage.png',
+    name: i18n.global.t('workshops.FresqueBonheurDurablePartage.name'),
+    description: i18n.global.t('workshops.FresqueBonheurDurablePartage.description'),
+    promoted: true,
+    website: 'https://phare-eudia.org/fresque-bdp/',
   },
 }
 
