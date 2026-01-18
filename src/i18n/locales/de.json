@@ -83,7 +83,7 @@
       },
       "help": {
         "title": "Hilfe! Ich habe eine Workshop-Veranstaltung veröffentlicht, die nicht auf Find a Fresk angezeigt wird!",
-        "description": "Ihre Veranstaltung erfüllt nicht alle Bedingungen für eine automatische Übernahme. Bitte andern Sie sie auf der ursprüngliche Reservierungsplattform, nachdem Sie unseren <a href='https://github.com/openfresque/trouver-une-fresque/blob/main/TUTORIAL.md'>Leitfaden für Workshop-Organisatoren</a> gelesen haben."
+        "description": "Ihre Veranstaltung erfüllt nicht alle Bedingungen für eine automatische Übernahme. Bitte andern Sie sie auf der ursprüngliche Reservierungsplattform, nachdem Sie unseren <a href='https://github.com/openfresque/trouver-une-fresque-scraper/blob/main/TUTORIAL.md'>Leitfaden für Workshop-Organisatoren</a> gelesen haben."
       }
     }
   },
@@ -100,7 +100,7 @@
       },
       "license": {
         "title": "Lizenz",
-        "content": "<a href='https://github.com/openfresque/multiworkshop-taskforce-front/blob/main/LICENSE'>AGPL-3.0</a> (auf Englisch)."
+        "content": "<a href='https://github.com/openfresque/frontend/blob/main/LICENSE'>AGPL-3.0</a> (auf Englisch)."
       }
     }
   },

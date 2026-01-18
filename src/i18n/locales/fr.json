@@ -83,7 +83,7 @@
       },
       "help": {
         "title": "Au secours, j'ai publié un évènement Fresque, qui n'apparaît pas sur Trouver une Fresque !",
-        "description": "Votre évènement ne rassemble pas toutes les conditions pour être récupéré de manière automatique. Merci de le modifier sur la plateforme originale après avoir lu notre <a href='https://github.com/openfresque/trouver-une-fresque/blob/main/TUTORIAL.md'>guide à l'attention des organisateurs de fresques</a>."
+        "description": "Votre évènement ne rassemble pas toutes les conditions pour être récupéré de manière automatique. Merci de le modifier sur la plateforme originale après avoir lu notre <a href='https://github.com/openfresque/trouver-une-fresque-scraper/blob/main/TUTORIAL.md'>guide à l'attention des organisateurs de fresques</a>."
       }
     }
   },
@@ -100,7 +100,7 @@
       },
       "license": {
         "title": "Licence",
-        "content": "<a href='https://github.com/openfresque/multiworkshop-taskforce-front/blob/main/LICENSE'>AGPL-3.0</a>"
+        "content": "<a href='https://github.com/openfresque/frontend/blob/main/LICENSE'>AGPL-3.0</a>"
       }
     }
   },

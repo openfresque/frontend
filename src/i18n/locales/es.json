@@ -83,7 +83,7 @@
       },
       "help": {
         "title": "¡Ayuda, he publicado un evento de un taller-mural, que no aparece en Encuentra un Mural!",
-        "description": "Su evento no cumple con todas las condiciones para ser recuperado automáticamente. Por favor, modifíquelo en la plataforma original después de leer nuestra <a href='https://github.com/openfresque/trouver-une-fresque/blob/main/TUTORIAL.md'>guía para organizadores de talleres-mural</a>."
+        "description": "Su evento no cumple con todas las condiciones para ser recuperado automáticamente. Por favor, modifíquelo en la plataforma original después de leer nuestra <a href='https://github.com/openfresque/trouver-une-fresque-scraper/blob/main/TUTORIAL.md'>guía para organizadores de talleres-mural</a>."
       }
     }
   },
@@ -100,7 +100,7 @@
       },
       "license": {
         "title": "Licencia",
-        "content": "<a href='https://github.com/openfresque/multiworkshop-taskforce-front/blob/main/LICENSE'>AGPL-3.0</a>"
+        "content": "<a href='https://github.com/openfresque/frontend/blob/main/LICENSE'>AGPL-3.0</a>"
       }
     }
   },
