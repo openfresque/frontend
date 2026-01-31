@@ -251,6 +251,10 @@
     "FresqueDuSol": {
       "name": "Fresque du Sol",
       "description": "Comprendre la complexité des enjeux sol pour les protéger"
+    },
+    "2030SDGsGame": {
+      "name": "2030 SDGs Game",
+      "description": "Jeu multijoueur basé sur des cartes qui simule de manière expérientielle le passage du « monde réel » à l'année 2030."
     }
   },
   "talkAboutIt": {
