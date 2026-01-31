@@ -25,6 +25,23 @@
       </div>
 
       <p>
+        Consult a directory compiling all local groups to date here:
+      </p>
+
+      <v-btn
+        color="primary"
+        block
+        size="large"
+        href="https://docs.climatefresk.org/share/jkxjznbpoe/p/local-structures-dAD79CNE98"
+        target="_blank"
+        class="card-action-button"
+      >
+        Full directory of local groups
+      </v-btn>
+
+      <!-- Missing Local Groups button -->
+
+      <p>
         {{ t('localGroups.missing.paragraph') }}
       </p>
 

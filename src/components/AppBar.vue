@@ -154,12 +154,6 @@
     },
     {
       id: 4,
-      to: '/lets-talk-about-it',
-      textKey: 'navigation.talkAboutIt',
-      icon: 'mdi-chat',
-    },
-    {
-      id: 5,
       textKey: 'navigation.community',
       icon: 'mdi-account-group',
       children: [
@@ -177,6 +171,12 @@
         },
         {
           id: 53,
+          to: '/lets-talk-about-it',
+          textKey: 'navigation.talkAboutIt',
+          icon: 'mdi-chat',
+        },
+        {
+          id: 54,
           href: 'https://www.linkedin.com/company/trouver-une-fresque',
           textKey: 'navigation.communityNews',
           icon: 'mdi-newspaper-variant-outline',

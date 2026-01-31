@@ -1,0 +1,373 @@
+{
+  "locale": {
+    "de": "German",
+    "en": "Inglés",
+    "fr": "Francés",
+    "es": "Español"
+  },
+  "welcome": "Encuentra un Mural cerca de ti",
+  "searchField": "Comuna, Código postal, Departamento...",
+  "banner": "¡Encuentra un Mural pronto se internacionalizará! Mientras tanto, ¡visita la <a href=\"https://www.findafresk.org\">página del proyecto</a> y síguenos en <a href=\"https://www.linkedin.com/company/trouver-une-fresque\">LinkedIn</a>!",
+  "footer": "Encuentra un Mural no es una herramienta oficial de búsqueda de talleres, NO es exhaustiva y no reemplaza una búsqueda manual, especialmente en el caso en que no se muestre ningún taller disponible en nuestro sitio web.",
+  "navigation": {
+    "home": "Inicio",
+    "news": "Noticias",
+    "findAFresk": "Encuentra un Mural",
+    "map": "El mapa",
+    "talkAboutIt": "Let's talk about it (Mayo 2025)",
+    "community": "Comunidad",
+    "taskforce": "Grupo de trabajo",
+    "localGroups": "Grupos locales",
+    "communityNews": "Noticias",
+    "about": "Acerca de"
+  },
+  "map": {
+    "address": "Dirección",
+    "booking": "Reserva"
+  },
+  "buttons": {
+    "license": "Encuentra un Mural - AGPL-3.0",
+    "legal": "Avisos legales",
+    "contact": "Contacto"
+  },
+  "common": {
+    "loading": "Cargando..."
+  },
+  "search": {
+    "includeOnline": "Incluir talleres en línea",
+    "attendWorkshop": "Participar en un taller",
+    "attendTrainingWorkshop": "Convertirse en facilitador/a",
+    "attendJuniorWorkshop": "Encuentra un taller para jóvenes",
+    "area": "Radio de búsqueda",
+    "all": "Todo"
+  },
+  "results": {
+    "workshop": "taller",
+    "training": "formación",
+    "junior": "junior",
+    "orOnline": "o En línea",
+    "doYouWantOnline": "¿Te gustaría incluir talleres en línea?",
+    "includeOnline": "Ver los talleres en línea",
+    "lastUpdate": "Última actualización:",
+    "for": "para",
+    "around": "alrededor de",
+    "today": "hoy",
+    "yesterday": "ayer",
+    "missingWorkshop": "¿No aparece tu taller? ¡Consulta la guía cuyo enlace está en la página de inicio!"
+  },
+  "resultsListing": {
+    "online": "En línea",
+    "book": "Reservar un cupo",
+    "bookShort": "Reservar",
+    "soldOut": "[AGOTADO] - Verificar"
+  },
+  "qa": {
+    "title": "¿Qué es Encuentra un Mural?",
+    "description": "Encuentra un Mural es un motor de búsqueda de talleres de tipo Mural.",
+    "sections": {
+      "interest": {
+        "title": "¿Cuál es el objetivo de Encuentra un Mural?",
+        "description": "Encuentra un Mural es una plataforma que permite encontrar un taller tipo Mural cerca de un lugar. Actualmente, se registran los siguientes talleres: Mural del Clima, Taller 2toneladas, Mural de la Diversidad, Mural de los Océanos, Mural de la Construcción, Mural de Agri'Alim, Mural de los Nuevos Relatos, Mural de la Movilidad, Mural de la Alimentación, Taller Inventemos Nuestras Vidas Bajo en Carbono, Taller OGRE, Mural del Agua, Mural de la Economía Circular, Mural de Futuros Cercanos, Mural del Textil, Mural de los Residuos, Mural de las Fronteras Planetarias, Taller Horizontes Descarbonizados, Taller 2030 Gloriosas, Mural de la Biodiversidad, Mural del Sexismo, Mural de lo Digital, Puzzle Clima, Mural de las Finanzas, Mural de la RSE, Taller Sobre Transiciones Urbanas, Cyber Mural, Mural del Plástico, Mural del Voluntariado. La reserva de un taller se realiza a través de las plataformas de venta de entradas asociadas. No estamos afiliados con ninguna de estas estructuras."
+      },
+      "functionality": {
+        "title": "¿Cómo funciona Encuentra un Mural?",
+        "description": "Los algoritmos de Encuentra un Mural analizan las diferentes plataformas de reserva de talleres-mural (Billetweb.fr, Eventbrite.fr, Fresqueduclimat.org) para agregarlas y hacer su búsqueda más accesible. La lista de talleres registrados en nuestra plataforma NO es exhaustiva."
+      },
+      "non_profit": {
+        "title": "¿Encuentra un Mural es sin fines de lucro?",
+        "description": "Sí, Encuentra un Mural es sin fines de lucro. La plataforma es gratuita, sin publicidad y no es necesario registrarse para usarla. Cumplimos con el Reglamento General de Protección de Datos de la Unión Europea al no almacenar ningún dato personal, y cumplimos con la directiva europea sobre cookies al no almacenar cookies. Las <a href='https://github.com/openfresque/trouver-une-fresque-scraper'>fuentes están disponibles libremente</a>."
+      },
+      "support": {
+        "title": "¿Cómo puedo apoyar el desarrollo de la plataforma?",
+        "description": "Desarrollar software libre requiere tiempo y cuesta dinero, no solo para realizar el trabajo inicial, sino también para mantenerlo a lo largo del tiempo. Si desea apoyar el desarrollo de esta plataforma, puede <a href='https://fr.liberapay.com/trouver-une-fresque/'>contribuir financieramente a través de Liberapay</a> (el pago se realiza a través de PayPal). También puedes hablar de nuestra plataforma en las redes sociales. ¡GRACIAS!"
+      },
+      "help": {
+        "title": "¡Ayuda, he publicado un evento de un taller-mural, que no aparece en Encuentra un Mural!",
+        "description": "Su evento no cumple con todas las condiciones para ser recuperado automáticamente. Por favor, modifíquelo en la plataforma original después de leer nuestra <a href='https://github.com/openfresque/trouver-une-fresque-scraper/blob/main/TUTORIAL.md'>guía para organizadores de talleres-mural</a>."
+      }
+    }
+  },
+  "legal_mentions": {
+    "title": "Avisos legales",
+    "sections": {
+      "edition": {
+        "title": "Edición",
+        "content": "El presente sitio web es editado por <a href='https://github.com/thomas-bouvier'>Thomas Bouvier</a> y <a href='https://github.com/TimotF'>Timothé Frignac</a> y alojado por la empresa Hostinger, cuyo domicilio social se encuentra en HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chipre, contactable por el siguiente medio: <a href='https://www.hostinger.fr/contact'>https://www.hostinger.fr/contact</a>."
+      },
+      "personal_data": {
+        "title": "Datos personales",
+        "content": "Su dirección IP y la referencia de la página visitada forman parte de la información personal registrada en el servidor que aloja este sitio web. Estos datos pueden eventualmente servir para diagnosticar un problema, pero nunca serán transmitidos a terceros y se eliminarán automáticamente. Para cualquier pregunta sobre sus datos personales, puede contactarnos en la siguiente dirección: <a href='mailto:contact@trouverunefresque.org'>contact@trouverunefresque.org</a>."
+      },
+      "license": {
+        "title": "Licencia",
+        "content": "<a href='https://github.com/openfresque/frontend/blob/main/LICENSE'>AGPL-3.0</a>"
+      }
+    }
+  },
+  "workshops": {
+    "FresqueNouveauxRecits": {
+      "name": "Mural de las Nuevas Narrativas",
+      "description": "Construyendo una sociedad diferente a través de un taller colaborativo y lúdico"
+    },
+    "FresqueOceane": {
+      "name": "Mural del Océano",
+      "description": "Descubrir los desafíos relacionados con el océano, y cómo podemos actuar para preservarlo"
+    },
+    "FresqueBiodiversite": {
+      "name": "Mural de la Biodiversidad",
+      "description": "Descubra el aspecto sistémico de la pérdida de la biodiversidad: qué es la biodiversidad, lo que genera y que la degrada."
+    },
+    "FresqueAgriAlim": {
+      "name": "Mural Agri'Alim",
+      "description": "Entender los desafíos de nuestro modelo agrícola y alimentario"
+    },
+    "FresqueNumerique": {
+      "name": "El Mural de lo Digital",
+      "description": "Un taller para comprender en equipo y de manera lúdica los desafíos ambientales del ámbito digital"
+    },
+    "FresqueMobilite": {
+      "name": "Mural de la Movilidad",
+      "description": "Descubrir cómo adoptar individual y colectivamente una movilidad más sostenible"
+    },
+    "FresqueAlimentation": {
+      "name": "Mural de la Alimentación",
+      "description": "Descubre los problemas ambientales, sanitarios y sociales relacionados con tu alimentación"
+    },
+    "OGRE": {
+      "name": "Taller Órdenes de Magnitud de las Energías",
+      "description": "Entender los desafíos de la transición energética"
+    },
+    "FresqueConstruction": {
+      "name": "Mural de la Construcción",
+      "description": "Tomar conciencia en equipo de los impactos de la construcción para actuar con eficacia."
+    },
+    "FresqueSexisme": {
+      "name": "Mural del Sexismo",
+      "description": "Desenreda la maquinaria sexista y proyéctate en una sociedad igualitaria"
+    },
+    "AtelierInventonsNosViesBasCarbone": {
+      "name": "Inventemos Nuestras Vidas Bajas en Carbono",
+      "description": "Imaginar juntos acciones necesarias, posibles y deseables para el clima"
+    },
+    "FresqueDeLeau": {
+      "name": "Mural del Agua",
+      "description": "Comprender las claves para entender el ciclo del agua, de dónde viene, cómo se utiliza y cómo está cambiando."
+    },
+    "FutursProches": {
+      "name": "Futuros Cercanos",
+      "description": "Imaginar juntos futuros deseables, plurales, alternativos y sostenibles"
+    },
+    "FresqueDiversite": {
+      "name": "Mural de la Diversidad",
+      "description": "41 tarjetas para fomentar una mayor conciencia inclusiva"
+    },
+    "FresqueDuTextile": {
+      "name": "Mural del Textil",
+      "description": "Descubra lo que ocurre entre bastidores en la industria textil, su impacto y las alternativas para una moda sostenible."
+    },
+    "FresqueDesDechets": {
+      "name": "Mural de los Residuos",
+      "description": "Descubrir la complejidad del tratamiento de residuos, en lo que se convierten y su impacto sobre el medio ambiente"
+    },
+    "PuzzleClimat": {
+      "name": "Puzzle Clima",
+      "description": "¡Un taller para reducir a la mitad tu huella de carbono en 5 años sin volver a la lámpara de aceite!"
+    },
+    "FresqueFinance": {
+      "name": "Mural de las Finanzas",
+      "description": "Concienciar sobre el papel de las finanzas en la transición socio-ecológica y hacer reflexionar a la ciudadanía sobre los mecanismos de acción"
+    },
+    "FresqueRSE": {
+      "name": "Mural de la RSE",
+      "description": "Contribuir a una empresa positiva, ética y sostenible y conviértete también en agente de cambio"
+    },
+    "AtelierDesTransitionsUrbaines": {
+      "name": "Taller Sobre Transiciones Urbanas",
+      "description": "Como equipo, descubran las soluciones más eficaces para diseñar un barrio resiliente, feliz y libre de carbono"
+    },
+    "2tonnes": {
+      "name": "Taller 2toneladas",
+      "description": "Reducir mi huella de carbono a 2050 a través de acciones individuales y colectivas"
+    },
+    "AtelierCompteGouttes": {
+      "name": "Taller Cuenta-Gotas",
+      "description": "Explorar el impacto del cambio climático sobre el agua"
+    },
+    "FresqueBenevolat": {
+      "name": "Mural del Voluntariado",
+      "description": "Pon tu energía al servicio de grandes causas y descubre las distintas formas de voluntariado"
+    },
+    "FresquePlastique": {
+      "name": "Mural del Plástico",
+      "description": "Una mirada al ciclo de vida completo de los plásticos"
+    },
+    "CyberFresque": {
+      "name": "Cyber Mural",
+      "description": "¡Desmitifica la ciberseguridad y mejora tu higiene digital!"
+    },
+    "FresqueClimat": {
+      "name": "El Mural del Clima",
+      "description": "Descubra cómo abordar los conceptos básicos y los desafíos del cambio climático , de forma colaborativa, para entrar en acción"
+    },
+    "FresqueEcoCirculaire": {
+      "name": "El Mural de la Economía Circular",
+      "description": "Comprender los desafíos de transformación de nuestro sistema de producción-consumo"
+    },
+    "FresqueFrontieresPlanetaires": {
+      "name": "Mural de las Fronteras Planetarias",
+      "description": "Descubra todos los procesos que comprometen la habitabilidad de nuestro planeta"
+    },
+    "HorizonsDecarbones": {
+      "name": "Taller Horizontes Descarbonizados",
+      "description": "¡Proyéctese en una sociedad francesa neutra en carbono y descubra cómo es el futuro!"
+    },
+    "2030Glorieuses": {
+      "name": "Taller 2030 Gloriosas",
+      "description": "¡Descubre esta fabulosa era en la que surgió una sociedad más justa, más sostenible y más feliz!"
+    },
+    "FresqueRenovation": {
+      "name": "Mural de la Renovación",
+      "description": "Entender los desafíos, etapas y beneficios de la renovación energética"
+    },
+    "FresqueEnergie": {
+      "name": "Mural de la Energía",
+      "description": "Abordar los fundamentos del sistema energético contemporáneo, de manera lúdica y autodidacta."
+    },
+    "FresqueDesPossibles": {
+      "name": "Mural de los Posibles",
+      "description": "Identificar y compartir soluciones concretas para participar en la transición en su territorio"
+    },
+    "FresqueCommunication": {
+      "name": "Mural de la Comunicación",
+      "description": "Abordar las buenas prácticas de la comunicación responsable"
+    },
+    "ZooFresque": {
+      "name": "ZooMural",
+      "description": "Entender nuestras relaciones con los animales"
+    },
+    "NotreTour": {
+      "name": "Nuestro Turno",
+      "description": "Tome el control de los desafíos ecológicos"
+    },
+    "PlanetC": {
+      "name": "Planet C Jugar de nuevo",
+      "description": "Cuestiona tus creencias y conviértete en arquitecto del cambio"
+    },
+    "FresqueDuSol": {
+      "name": "Mural del Suelo",
+      "description": "Comprender la complejidad de los problemas del suelo para poder protegerlos"
+    }
+  },
+  "talkAboutIt": {
+    "title": "Let's Talk About It (Hablamos de ello mayo 2025)",
+    "campaign": "¡En mayo de 2025, facilitemos talleres en todo el mundo! Nos complace albergar la campaña mundial \"Let's Talk About It!\" (hablamos de ello)",
+    "whatFor": "¿Cuál es el objetivo de esta campaña?",
+    "throughoutMay": "A lo largo del mes de mayo de 2025, unámonos bajo la campaña \"Let's talk about it!\" (Hablemos de ello) organizando tantos talleres como sea posible en todo el mundo.",
+    "aimOfOperation": "El objetivo de esta operación conjunta es destacar la comunidad internacional de facilitadores y ayudarle a reclutar participantes para sus talleres mediante:",
+    "jointCommunication": "Una comunicación común y armonizada entre las asociaciones en un corto período",
+    "commonMap": "Un mapa común que destaca los talleres internacionales de esta campaña (¡pronto aquí!)",
+    "ticketingTools": "Herramientas de venta de entradas y precios adaptados a su contexto, para que no sean un obstáculo para tener participantes",
+    "yourRole": "¿Cuál es tu rol como facilitador o responsable de una comunidad?",
+    "planWorkshops": "Es fácil: ¡planifica uno o varios talleres en mayo de 2025, en cualquier parte del mundo!",
+    "createSessions": "Debe crear las sesiones antes del 24 de abril, siguiendo los procesos normales de las asociaciones encargadas de cada taller 🙂",
+    "kitEnglish": "Kit de comunicación en inglés",
+    "kitFrench": "Kit de comunicación en francés",
+    "kitSpanish": "Kit de comunicación en español",
+    "theMap": "El mapa"
+  },
+  "homepage": {
+    "hero": {
+      "title": "Nuestro objetivo es desarrollar la cooperación entre las comunidades de facilitadores locales y sus ecosistemas para acelerar la difusión de los talleres de inteligencia colectiva a nivel internacional.",
+      "subtitle": "Te damos la bienvenida en Encuentra un Mural, una plataforma por y para la comunidad. Sin fines de lucro.",
+      "description": "Somos un movimiento entusiasta global de facilitadores de talleres basados en ciencia. Utilizamos herramientas como el taller Mural del Clima para implicar a las personas en acciones significativas por el planeta a través de la concienciación, el pensamiento sistémico y la inteligencia colectiva."
+    },
+    "movement": {
+      "title": "Un movimiento mundial para el aprendizaje vivencial",
+      "button": "Encuentra un Mural"
+    },
+    "collaboration": {
+      "title": "¡Ninguno de nosotros puede hacerlo solo!",
+      "description": "Hicimos un llamado a las comunidades de muralistas para hablar sobre las diferentes formas en que las personas están practicando los talleres-mural a nivel internacional. Nos dimos cuenta de que tenemos puntos desafíos comunes y, por lo tanto, lecciones que compartir.",
+      "button": "¡Únete a nuestro grupo de trabajo!"
+    },
+    "mapping": {
+      "title": "¡Mapeo de grupos en todo el mundo!",
+      "description": "Estamos tratando de compilar una lista de todos los grupos multi-murales en todo el mundo. Nuestro objetivo es dar visibilidad a estos grupos en todo el mundo.",
+      "button": "Descubrir los grupos locales"
+    }
+  },
+  "taskforce": {
+    "title": "El grupo de trabajo multi-talleres-mural",
+    "intro": "Esta página web es mantenida por el 'Grupo de trabajo multi-talleres'. Este grupo fue creado por comunidades locales de facilitadores de todo el mundo, y se reúne regularmente para identificar las necesidades compartidas y desarrollar soluciones.",
+    "goal": {
+      "title": "Nuestro objetivo",
+      "text": "Desarrollar la cooperación entre las comunidades locales multi-murales y sus ecosistemas para acelerar la difusión mundial de talleres de sensibilización ambiental."
+    },
+    "structure": {
+      "title": "Estamos estructurados según los tres ejes siguientes para alcanzar este objetivo.",
+      "ecosystem": {
+        "title": "Ecosistema multi-talleres-mural",
+        "point1": "Recoger opiniones y experiencias, trazar un mapa de las partes interesadas e identificar brechas en el movimiento multi-taller a través de un grupo de trabajo estructurado con representantes de los grupos locales existentes y futuros.",
+        "point2": "Proponer estrategias para una gobernanza saludable y flujos financieros para responder a preguntas como: \"¿Qué estructuras legales funcionan bien?\", \"¿Cómo equilibrar las necesidades de los voluntarios y los profesionales?\".",
+        "point3": "Aumentar la visibilidad del movimiento a través de la imagen de marca y de la colaboración con iniciativas como el Mural del Clima y otros talleres tipo Mural."
+      },
+      "tools": {
+        "title": "Herramientas y Plataformas Digitales Globales",
+        "point1": "Identificar los desafíos generados por el uso de herramientas digitales que están frenando el despliegue mundial de herramientas educativas innovadoras para los actores, facilitadores y asociaciones.",
+        "point3": "Trabajar en el desarrollo de herramientas digitales internacionales, para apoyar a estas partes interesadas mientras se privilegia el código abierto y los datos abiertos."
+      },
+      "local": {
+        "title": "Comunidades Locales",
+        "point1": "Ayudar a las nuevas comunidades locales a estructurar sus actividades multi-talleres-mural",
+        "point2": "Recomendar modelos de financiación locales con sinergias pro/voluntarias.",
+        "point3": "Recopilar la experiencia de los grupos existentes. Este conocimiento resultará en la escritura de un manual para las estructuras locales multi-talleres-mural",
+        "point4": "Conectar estos grupos locales con la comunidad mundial y sus herramientas. Esto será útil para evitar repetir los errores de otros."
+      }
+    },
+    "progress": {
+      "title": "¿Qué hemos hecho hasta ahora?",
+      "team": {
+        "title": "¡Hemos formado un equipo!",
+        "text1": "Hemos reunido a representantes de más de 30 grupos locales, colectivos y ONGs que comparten el mismo interés por los talleres de inteligencia colectiva."
+      },
+      "consulting": {
+        "question": "¿Eres responsable de un taller o grupo local?",
+        "understand": "Lanzamos una convocatoria para hablar de las distintas formas en que se crean las estructuras multi-taller a escala internacional. Nos dimos cuenta de que teníamos desafíos comunes y aún más lecciones que compartir. Queremos entender...",
+        "point1": "Su \"stack/pila tecnológica\".",
+        "point2": "Tus desafíos.",
+        "point3": "Las necesidades de tus facilitadores.",
+        "support": "…en cómo apoyas a tu comunidad de facilitadores para realizar talleres."
+      },
+      "mapping": {
+        "title": "¡Cartografía de grupos locales en el mundo!",
+        "question": "¿Formas parte de un grupo que ofrece talleres?",
+        "compile": "Estamos tratando de recopilar una lista de todos los grupos multi-murales del mundo para darles visibilidad."
+      }
+    },
+    "interviewUs": "Déjanos entrevistarte",
+    "addGroup": "Agrega tu grupo o entidad",
+    "button": {
+      "joinTeam": "Únete al equipo",
+      "discoverLocalGroups": "Descubrir los grupos locales"
+    }
+  },
+  "localGroups": {
+    "title": "Grupos locales",
+    "globalCommunity": {
+      "heading": "Una comunidad global de multi-talleres-mural",
+      "paragraph": "Nuestra comunidad mundial de múltiples talleres-mural a menudo nació del despliegue de la asociación El Mural del Clima. Desde entonces, otras ONG han creado muchos otros talleres y herramientas, basadas en los mismos principios de inteligencia colectiva, siempre anclados en publicaciones científicas. Después de participar en un taller, los participantes pueden formarse como facilitadores y están capacitados para unirse a la comunidad y comenzar a sensibilizar a su entorno."
+    },
+    "builtByLocal": {
+      "heading": "Una comunidad construida por los grupos locales",
+      "paragraph1": "Las comunidades locales ahora estructuran sus actividades para desplegar de la mejor manera estas múltiples herramientas en sus regiones. Hemos catalogado más de 40 de estos grupos que difunden nuestros talleres murales favoritos. ¡En todo el mundo!",
+      "paragraph2": "Un punto en este mapa no representa la diversidad de cultura, propósito y madurez de estos grupos. ¿Pero quién sabe, tal vez te ayude a ponerte en contacto con ellos?"
+    },
+    "missing": {
+      "paragraph": "Si su grupo local no aparece, haga clic en el botón para completar el formulario.",
+      "button": "Agregar un grupo local al mapa"
+    },
+    "unique": {
+      "paragraph": "¡Cada comunidad local es única! En los próximos pasos, buscaremos hacer más visibles las características de cada grupo : ¿cuáles de estos grupos se centran en el empoderamiento de las comunidades?"
+    }
+  }
+}
