@@ -256,6 +256,10 @@
     "FresqueDuSol": {
       "name": "Mural del Suelo",
       "description": "Comprender la complejidad de los problemas del suelo para poder protegerlos"
+    },
+    "2030SDGsGame": {
+      "name": "2030 SDGs Game",
+      "description": "Juego multijugador presencial basado en cartas que simula de forma experiencial cómo sería el «mundo real» en el año 2030"
     }
   },
   "talkAboutIt": {
