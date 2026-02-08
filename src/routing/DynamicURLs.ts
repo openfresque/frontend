@@ -1,4 +1,5 @@
-import type { CodeTriCentre, SearchType } from '../state/State'
+import type { SearchType } from '../common/Conf'
+import type { CodeTriCentre } from '../state/State'
 import { Strings } from '../utils/Strings'
 
 export const rechercheDepartementDescriptor = {

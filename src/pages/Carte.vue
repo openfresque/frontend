@@ -16,7 +16,8 @@
   import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
   // @ts-ignore
   import { MarkerClusterGroup } from 'leaflet.markercluster'
-  import { State, Workshop } from '@/state/State'
+  import { Workshop } from '@/common/Conf'
+  import { State } from '@/state/State'
 
   type WorkshopCarte = {
     nom: string
