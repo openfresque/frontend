@@ -340,11 +340,13 @@ export type ISODateString = string
 export type Workshop = {
   address: string
   city: string
+  country_code?: string
   department: CodeDepartement
   description: string
   end_date: ISODateString
   full_location: string
   kids: boolean
+  language_code?: string
   latitude: number
   longitude: number
   location_name: string

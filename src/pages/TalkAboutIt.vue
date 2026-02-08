@@ -106,7 +106,7 @@
 
 <script setup lang="ts">
   import type { LatLngTuple, Marker } from 'leaflet'
-  import type { Workshop as BaseWorkshop } from '@/common/Conf'
+  import type { Workshop } from '@/common/Conf'
   import { Icon, map, marker, tileLayer } from 'leaflet'
   // @ts-ignore
   import { MarkerClusterGroup } from 'leaflet.markercluster'
@@ -117,11 +117,6 @@
   import { getFlagEmoji } from '@/utils/flagEmoji'
   import 'leaflet/dist/leaflet.css'
   import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
-  // Extend the Conf.Workshop type to carry optional language and country codes
-  type WorkshopWithLang = BaseWorkshop & {
-    language_code?: string
-    country_code?: string
-  }
 
   type RawWorkshopData = {
     title: string
@@ -153,7 +148,7 @@
   }
 
   const mymap = ref<any>(null)
-  const workshopsForList = ref<WorkshopWithLang[]>([])
+  const workshopsForList = ref<Workshop[]>([])
   const isLoading = ref(true)
   const { t } = useI18n()
   const theme = useTheme()
@@ -194,7 +189,7 @@
 
       // Map ALL raw workshops to Workshop[] type for the list
       workshopsForList.value = rawWorkshopsData.map(
-        (raw): WorkshopWithLang => ({
+        (raw): Workshop => ({
           title: raw.title,
           language_code: raw.language_code || '',
           country_code: raw.country_code || '',

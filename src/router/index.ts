@@ -91,8 +91,20 @@ const router = createRouter({
           props: true,
         },
         {
+          path: rechercheDepartementDescriptor.routerUrlWithLang,
+          name: ROUTE_SEARCH_DPT + 'WithLang',
+          component: SearchResults,
+          props: true,
+        },
+        {
           path: rechercheCommuneDescriptor.routerUrl,
           name: ROUTE_SEARCH_CITY,
+          component: SearchResults,
+          props: true,
+        },
+        {
+          path: rechercheCommuneDescriptor.routerUrlWithLang,
+          name: ROUTE_SEARCH_CITY + 'WithLang',
           component: SearchResults,
           props: true,
         },

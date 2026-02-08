@@ -39,7 +39,9 @@
     "attendTrainingWorkshop": "Als ModeratorIn ausgebildet werden",
     "attendJuniorWorkshop": "Einen Junior-Workshop finden",
     "area": "Suchgereich",
-    "all": "alle"
+    "all": "alle",
+    "language": "Sprache",
+    "allLanguages": "Alle Sprachen"
   },
   "results": {
     "workshop": "Workshop",

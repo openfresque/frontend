@@ -39,7 +39,9 @@
     "attendTrainingWorkshop": "Convertirse en facilitador/a",
     "attendJuniorWorkshop": "Encuentra un taller para jóvenes",
     "area": "Radio de búsqueda",
-    "all": "Todo"
+    "all": "Todo",
+    "language": "Idioma",
+    "allLanguages": "Todos los idiomas"
   },
   "results": {
     "workshop": "taller",

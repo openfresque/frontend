@@ -39,7 +39,9 @@
     "attendTrainingWorkshop": "Devenir animateur",
     "attendJuniorWorkshop": "Trouver un atelier junior",
     "area": "Rayon de recherche",
-    "all": "Tout"
+    "all": "Tout",
+    "language": "Langue",
+    "allLanguages": "Toutes les langues"
   },
   "results": {
     "workshop": "atelier",
