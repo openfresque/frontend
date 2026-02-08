@@ -39,7 +39,9 @@
     "attendTrainingWorkshop": "Become a facilitator",
     "attendJuniorWorkshop": "Find a junior workshop",
     "area": "Search area",
-    "all": "all"
+    "all": "all",
+    "language": "Language",
+    "allLanguages": "All languages"
   },
   "results": {
     "workshop": "workshop",
