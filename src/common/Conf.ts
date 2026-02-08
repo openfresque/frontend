@@ -323,6 +323,14 @@ export const ATELIERS: Record<number, Atelier> = {
     promoted: true,
     website: 'https://fresquedusol.com/',
   },
+  802: {
+    code: '2030SDGsGame',
+    logo: '/assets/images/logo/logo_2030SDGsGame.png',
+    name: i18n.global.t('workshops.2030SDGsGame.name'),
+    description: i18n.global.t('workshops.2030SDGsGame.description'),
+    promoted: true,
+    website: 'https://2030sdgsgame.com/',
+  },
 }
 
 export type CodeDepartement = string

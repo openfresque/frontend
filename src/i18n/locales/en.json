@@ -256,6 +256,10 @@
     "FresqueDuSol": {
       "name": "The Soil Collage",
       "description": "Understand the complexity of soil impacts to better protect it"
+    },
+    "2030SDGsGame": {
+      "name": "2030 SDGs Game",
+      "description": "Multiplayer card-based game that experientially simulates taking the “real world” into the year 2030."
     }
   },
   "talkAboutIt": {
