@@ -1,8 +1,8 @@
-name: "chore(tolgee): sync (pull) translations"
+name: 'chore(tolgee): sync (pull) translations'
 
 on:
   schedule:
-    - cron: "0 */8 * * *"   # <=== Change this value
+    - cron: '0 */8 * * *' # <=== Change this value
 
 jobs:
   pull-keys:
@@ -13,7 +13,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '21.5'
+          node-version: '22'
       - run: yarn install
         working-directory: ./.tolgee
       - run: yarn pull
@@ -25,4 +25,4 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
-            title: '[Tolgee] New Translations'
+          title: '[Tolgee] New Translations'
