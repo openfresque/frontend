@@ -68,6 +68,11 @@
       type: Boolean,
       default: false,
     },
+    language: {
+      type: String,
+      required: false,
+      default: undefined,
+    },
   })
 
   const autocompleteMatches = ref<AutocompleteItem[]>([])
@@ -124,6 +129,7 @@
         nomCommune: com.nom,
         tri: 'distance',
         searchType: 'atelier',
+        languageCode: props.language,
       })
       console.log('Navigating to', url)
       router.push(url)
@@ -134,6 +140,7 @@
         codeDepartement: dpt.code_departement,
         nomDepartement: dpt.nom_departement,
         searchType: 'atelier',
+        languageCode: props.language,
       })
       console.log('Navigating to', url)
       router.push(url)

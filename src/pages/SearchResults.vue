@@ -18,6 +18,19 @@
           hide-details
         ></v-switch>
 
+        <!-- language filter -->
+        <v-select
+          class="mt-2"
+          v-model="language"
+          :items="languageItems"
+          item-title="title"
+          item-value="value"
+          :label="t('search.language')"
+          variant="outlined"
+          hide-details
+          density="comfortable"
+        ></v-select>
+
         <!-- search radius -->
         <div v-if="isSearchByCity()">
           <!-- desktop slider -->
@@ -104,6 +117,7 @@
             :search-radius="tickDistances[distance]"
             :workshop-type="'atelier'"
             :online="online"
+            :language="language"
             :location-title="getLocationTitle()"
             :last-update-date="lastUpdateDate"
             :search-by-dpt="isSearchByDpt()"
@@ -120,6 +134,7 @@
             :search-radius="tickDistances[distance]"
             :workshop-type="'formation'"
             :online="online"
+            :language="language"
             :location-title="getLocationTitle()"
             :last-update-date="lastUpdateDate"
             :search-by-dpt="isSearchByDpt()"
@@ -137,6 +152,7 @@
             :search-radius="tickDistances[distance]"
             :workshop-type="'junior'"
             :online="online"
+            :language="language"
             :location-title="getLocationTitle()"
             :last-update-date="lastUpdateDate"
             :search-by-dpt="isSearchByDpt()"
@@ -150,18 +166,31 @@
 </template>
 
 <script lang="ts" setup>
-  import type { Workshop } from '@/common/Conf'
+  import type { Workshop, SearchType } from '@/common/Conf'
   import type { AutocompleteItem, Commune, Departement } from '@/state/State'
-  import { onMounted, ref } from 'vue'
+  import { computed, nextTick, onMounted, ref } from 'vue'
   import { useI18n } from 'vue-i18n'
   import router, { ROUTE_SEARCH_CITY, ROUTE_SEARCH_DPT } from '@/router'
   import {
+    LANGUAGE_ALL,
     rechercheCommuneDescriptor,
     rechercheDepartementDescriptor,
   } from '@/routing/DynamicURLs'
   import { State } from '@/state/State'
 
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
+
+  const supportedLocales = import.meta.env.VITE_SUPPORTED_LOCALES.split(
+    ','
+  ) as string[]
+
+  const languageItems = computed(() => [
+    { title: t('search.allLanguages'), value: LANGUAGE_ALL },
+    ...supportedLocales.map((loc: string) => ({
+      title: t(`locale.${loc}`),
+      value: loc,
+    })),
+  ])
 
   const searchItem = ref<AutocompleteItem>({
     value: 0,
@@ -200,39 +229,51 @@
   const selectedDpt = ref<Departement | undefined>(undefined)
   const distance = ref(2)
   const online = ref(false)
+  const language = ref(LANGUAGE_ALL)
   const tab = ref('atelier')
   const isLoading = ref(false)
+  let skipRouteUpdate = false
 
-  watch([online, tab], () => {
+  watch([online, tab, language], () => {
+    if (skipRouteUpdate) return
     updateRoute()
   })
 
   function updateRoute() {
     const params = router.currentRoute.value.params as any
-    params.includesOnline = online.value ? 'oui' : 'non'
-    params.typeRecherche = tab.value
-    let route = rechercheCommuneDescriptor.routerUrl
-    if (isSearchByDpt()) {
-      route = rechercheDepartementDescriptor.routerUrl
+    let url: string
+    if (isSearchByCity()) {
+      url = rechercheCommuneDescriptor.urlGenerator({
+        codeDepartement: params.codeDpt,
+        nomDepartement: params.nomDpt,
+        codeCommune: params.codeCommune,
+        codePostal: params.codePostal,
+        nomCommune: params.nomCommune,
+        tri: params.codeTriCentre,
+        searchType: tab.value as SearchType,
+        languageCode: language.value,
+      })
+    } else {
+      url = rechercheDepartementDescriptor.urlGenerator({
+        codeDepartement: params.codeDpt,
+        nomDepartement: params.nomDpt,
+        searchType: tab.value as SearchType,
+        languageCode: language.value,
+      })
     }
-    route = route.replace(':codeDpt', params.codeDpt)
-    route = route.replace(':nomDpt', params.nomDpt)
-    route = route.replace(':codeCommune', params.codeCommune)
-    route = route.replace(':codePostal', params.codePostal)
-    route = route.replace(':nomCommune', params.nomCommune)
-    route = route.replace(':typeRecherche', params.typeRecherche)
-    route = route.replace(':codeTriCentre', params.codeTriCentre)
-    route = route.replace(':includesOnline', params.includesOnline)
-
-    history.pushState({}, '', route)
+    // Include online param
+    url = url.replace('/online-non', `/online-${online.value ? 'oui' : 'non'}`)
+    history.replaceState({}, '', url)
   }
 
   function isSearchByCity() {
-    return router.currentRoute.value.name === ROUTE_SEARCH_CITY
+    const name = router.currentRoute.value.name as string
+    return name === ROUTE_SEARCH_CITY || name === ROUTE_SEARCH_CITY + 'WithLang'
   }
 
   function isSearchByDpt() {
-    return (router.currentRoute.value.name as string) === ROUTE_SEARCH_DPT
+    const name = router.currentRoute.value.name as string
+    return name === ROUTE_SEARCH_DPT || name === ROUTE_SEARCH_DPT + 'WithLang'
   }
 
   function getDptCode() {
@@ -242,6 +283,7 @@
 
   async function refresh() {
     isLoading.value = true
+    skipRouteUpdate = true
     const params = router.currentRoute.value.params as any
     // City search
     if (isSearchByCity()) {
@@ -280,6 +322,10 @@
 
     online.value = params.includesOnline === 'oui'
     tab.value = params.typeRecherche
+    language.value = params.languageCode || locale.value
+    // Allow watch to trigger updateRoute() again after syncing from route params
+    await nextTick()
+    skipRouteUpdate = false
     const allWorkshops = await State.current.allWorkshops()
     filteredWorkshops.value = allWorkshops.workshopsDisponibles
     lastUpdateDate.value = allWorkshops.derniereMiseAJour

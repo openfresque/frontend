@@ -84,26 +84,17 @@
 </template>
 
 <script lang="ts" setup>
-  import type {
-    Workshop as BaseWorkshop,
-    CodeDepartement,
-    SearchType,
-  } from '@/common/Conf'
+  import type { Workshop, CodeDepartement, SearchType } from '@/common/Conf'
   import { onMounted, ref } from 'vue'
   import { useI18n } from 'vue-i18n'
+  import { LANGUAGE_ALL } from '@/routing/DynamicURLs'
   import distanceBetween from '@/utils/distance'
 
   const { t } = useI18n()
 
-  // Extend Workshop to carry optional language and country codes for international mode
-  type WorkshopWithLang = BaseWorkshop & {
-    language_code?: string
-    country_code?: string
-  }
-
   const props = defineProps({
     workshops: {
-      type: Array as PropType<WorkshopWithLang[]>,
+      type: Array as PropType<Workshop[]>,
       required: true,
     },
     longitude: Number,
@@ -122,6 +113,11 @@
       type: Boolean,
       required: false,
       default: false,
+    },
+    language: {
+      type: String,
+      required: false,
+      default: LANGUAGE_ALL,
     },
     locationTitle: {
       type: String,
@@ -150,8 +146,8 @@
     },
   })
 
-  const filteredWorkshops = ref<WorkshopWithLang[]>([])
-  const filteredWorkshopsToDisplay = ref<WorkshopWithLang[]>([])
+  const filteredWorkshops = ref<Workshop[]>([])
+  const filteredWorkshopsToDisplay = ref<Workshop[]>([])
   let infiniteScrollEvents:
     | ((value: 'ok' | 'empty' | 'error') => void)
     | undefined
@@ -194,63 +190,67 @@
   }
 
   function filterWorkshops() {
-    filteredWorkshops.value = props.workshops.filter(
-      (workshop: WorkshopWithLang) => {
-        // junior filter
-        if (
-          props.workshopType === 'junior' &&
-          (!workshop.kids || workshop.training) // don't show training for kids
-        ) {
-          return false
-        }
-
-        // training filter
-        if (props.workshopType === 'formation' && !workshop.training) {
-          return false
-        }
-
-        // workshop filter
-        if (
-          props.workshopType === 'atelier' &&
-          (workshop.training || workshop.kids)
-        ) {
-          return false
-        }
-
-        // online toggle: exclude online-only events when not including online (and not in international mode)
-        if (!props.international && !props.online && workshop.online) {
-          return false
-        }
-        // include online workshops when the online toggle is on (bypass distance filter)
-        if (!props.international && props.online && workshop.online) {
-          return true
-        }
-
-        //   search by department filter
-        if (props.searchByDpt) {
-          return workshop.department === props.dptNb
-        }
-
-        // Distance filter
-        if (props.searchRadius === -1) {
-          return true
-        }
-
-        if (!props.longitude || !props.latitude) {
-          console.warn(
-            'No longitude or latitude provided for workshop',
-            workshop
-          )
-          return false
-        }
-
-        const distance = distanceBetween(
-          { latitude: workshop.latitude, longitude: workshop.longitude },
-          { latitude: props.latitude, longitude: props.longitude }
-        )
-        return distance <= props.searchRadius
+    filteredWorkshops.value = props.workshops.filter((workshop: Workshop) => {
+      // language filter: keep if no language_code on the record, or if it matches
+      if (
+        props.language !== LANGUAGE_ALL &&
+        workshop.language_code &&
+        workshop.language_code !== props.language
+      ) {
+        return false
       }
-    )
+
+      // junior filter
+      if (
+        props.workshopType === 'junior' &&
+        (!workshop.kids || workshop.training) // don't show training for kids
+      ) {
+        return false
+      }
+
+      // training filter
+      if (props.workshopType === 'formation' && !workshop.training) {
+        return false
+      }
+
+      // workshop filter
+      if (
+        props.workshopType === 'atelier' &&
+        (workshop.training || workshop.kids)
+      ) {
+        return false
+      }
+
+      // online toggle: exclude online-only events when not including online (and not in international mode)
+      if (!props.international && !props.online && workshop.online) {
+        return false
+      }
+      // include online workshops when the online toggle is on (bypass distance filter)
+      if (!props.international && props.online && workshop.online) {
+        return true
+      }
+
+      //   search by department filter
+      if (props.searchByDpt) {
+        return workshop.department === props.dptNb
+      }
+
+      // Distance filter
+      if (props.searchRadius === -1) {
+        return true
+      }
+
+      if (!props.longitude || !props.latitude) {
+        console.warn('No longitude or latitude provided for workshop', workshop)
+        return false
+      }
+
+      const distance = distanceBetween(
+        { latitude: workshop.latitude, longitude: workshop.longitude },
+        { latitude: props.latitude, longitude: props.longitude }
+      )
+      return distance <= props.searchRadius
+    })
 
     sortWorkshops()
   }
@@ -283,6 +283,7 @@
       props.latitude,
       props.workshopType,
       props.online,
+      props.language,
     ],
     newVal => {
       filteredWorkshops.value = []
