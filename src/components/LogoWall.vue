@@ -17,11 +17,13 @@
                 :href="workshop.website"
                 target="_blank"
               >
-                <v-img
-                  class="workshop-logo"
-                  :src="workshop.logo"
-                  :alt="workshop.name"
-                />
+                <div class="logo-container">
+                  <v-img
+                    class="workshop-logo"
+                    :src="workshop.logo"
+                    :alt="workshop.name"
+                  />
+                </div>
               </a>
               <v-card-title>{{ t(`workshops.${workshop.code}.name`) }}</v-card-title>
               <v-card-text>{{ t(`workshops.${workshop.code}.description`) }}</v-card-text>
@@ -74,4 +76,8 @@
     margin: 0 auto; /* Center the image horizontally */
     display: block; /* Ensure the image is displayed as a block element */
   }
+</style>
+
+<style>
+  @import '@/styles/logo-container.scss';
 </style>
