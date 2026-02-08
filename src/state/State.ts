@@ -195,7 +195,7 @@ export const ATELIERS: Record<number, Atelier> = {
   },
   8: {
     code: 'FresqueSexisme',
-    logo: 'logo_fresqueSexisme.webp',
+    logo: 'logo_fresqueSexisme.png',
     nom: 'Fresque du Sexisme',
     description:
       'Détricoter la mécanique sexiste et se projeter dans une société égalitaire',

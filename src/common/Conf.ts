@@ -87,7 +87,7 @@ export const ATELIERS: Record<number, Atelier> = {
   },
   8: {
     code: 'FresqueSexisme',
-    logo: '/assets/images/logo/logo_fresqueSexisme.webp',
+    logo: '/assets/images/logo/logo_fresqueSexisme.png',
     name: i18n.global.t('workshops.FresqueSexisme.name'),
     description: i18n.global.t('workshops.FresqueSexisme.description'),
     promoted: true,
