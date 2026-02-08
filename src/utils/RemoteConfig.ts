@@ -1,4 +1,5 @@
-import { DataUrlGenerator, GITHUB_DATA_URLS } from './LocalConfig'
+import type { DataUrlGenerator } from './LocalConfig'
+import { GITHUB_DATA_URLS } from './LocalConfig'
 
 type RemoteConfigEntries = {
   path_contributors: string
@@ -13,7 +14,7 @@ const REMOTE_CONFIG_ENTRIES: RemoteConfigEntries = {
   path_data_department: '/vitemadose/{code}.json',
   path_list_departments: '/vitemadose/departements.json',
   url_base: 'https://vitemadose.gitlab.io',
-  api_base: 'https://marbeuf.ddns.net/trouverunefresque',
+  api_base: 'https://mycetes.ddns.net:4443/trouverunefresque',
 }
 
 const REMOTE_CONFIG_ENTRIES_FALLBACK: RemoteConfigEntries = {
@@ -34,7 +35,7 @@ export class RemoteConfig {
   public static currentEnv(): 'prod' | 'testing' | 'dev' | 'unknown' {
     if (document.location.host === 'trouverunefresque.org') {
       return 'prod'
-    } else if (document.location.host === 'dev.vitemado.se') {
+    } else if (document.location.host === 'dev.trouverunefresque.org') {
       return 'testing'
     } else if (['localhost', '127.0.0.1'].includes(document.location.host)) {
       return 'dev'

@@ -51,7 +51,6 @@
         <SearchResultsCard
           :workshop="item"
           :workshop-type-title="getWorkshopType(false)"
-          :title="item.title"
           :international="international"
           :language-code="item.language_code"
           :country-code="item.country_code"
@@ -85,14 +84,14 @@
 </template>
 
 <script lang="ts" setup>
-  import {
+  import type {
+    Workshop as BaseWorkshop,
     CodeDepartement,
     SearchType,
-    Workshop as BaseWorkshop,
   } from '@/common/Conf'
-  import distanceBetween from '@/utils/distance'
-  import { ref, onMounted } from 'vue'
+  import { onMounted, ref } from 'vue'
   import { useI18n } from 'vue-i18n'
+  import distanceBetween from '@/utils/distance'
 
   const { t } = useI18n()
 
@@ -239,7 +238,7 @@
 
         if (!props.longitude || !props.latitude) {
           console.warn(
-            'No longitude or latitude provided for workshop ',
+            'No longitude or latitude provided for workshop',
             workshop
           )
           return false

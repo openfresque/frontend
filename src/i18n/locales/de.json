@@ -1,25 +1,25 @@
 {
   "locale": {
-    "de": "German",
-    "en": "English",
-    "fr": "French",
-    "es": "Spanish"
+    "de": "Deutsch",
+    "en": "Englisch",
+    "fr": "Französich",
+    "es": "Spanisch"
   },
-  "welcome": "Find a Fresk near you",
-  "searchField": "City, Postal Code, Department...",
+  "welcome": "Finden Sie einen Workshop in Ihrer Nähe",
+  "searchField": "Stadt, Postleitzahl, Kanton...",
   "banner": "Find a Fresk will soon be internationalized! In the meantime, visit the <a href=\"https://www.findafresk.org\">project page</a>, and follow us on <a href=\"https://www.linkedin.com/company/trouver-une-fresque\">LinkedIn</a>!",
-  "footer": "Find a Fresk is not an official tool, is NOT exhaustive, and does not replace manual searches, especially when no available workshops are listed on our site.",
+  "footer": "Find a Fresk ist kein offizielles Tool, ist NICHT vollständig und ersetzt nicht die manuelle Suche, inbesondere wenn keine verfügbaren Worshops auf unserer Website aufgeführt sind.",
   "navigation": {
-    "home": "Home",
-    "news": "News",
+    "home": "Startseite",
+    "news": "Aktuelles",
     "findAFresk": "Find a Fresk",
-    "map": "Fresk Map",
-    "talkAboutIt": "Let's Talk About It (May 2025)",
-    "community": "Community",
-    "taskforce": "Taskforce",
-    "localGroups": "Local Groups",
-    "communityNews": "News",
-    "about": "About"
+    "map": "Fresk Karte",
+    "talkAboutIt": "Let's Talk About It (Mai 2025)",
+    "community": "Gemeinschaft",
+    "taskforce": "Arbeitsgruppe",
+    "localGroups": "Lokale Gruppen",
+    "communityNews": "Lokale Nachrichten",
+    "about": "Über uns"
   },
   "map": {
     "address": "Address",
@@ -27,80 +27,80 @@
   },
   "buttons": {
     "license": "Find a Fresk - AGPL-3.0",
-    "legal": "Legal Notices",
-    "contact": "Contact"
+    "legal": "Rechtliche Hinweise",
+    "contact": "Kontakt"
   },
   "common": {
-    "loading": "Loading..."
+    "loading": "Laden..."
   },
   "search": {
-    "includeOnline": "Include online workshops",
-    "attendWorkshop": "Participate in a workshop",
-    "attendTrainingWorkshop": "Become a facilitator",
-    "attendJuniorWorkshop": "Find a junior workshop",
-    "area": "Search area",
-    "all": "all"
+    "includeOnline": "Online-Workshops einschliessen",
+    "attendWorkshop": "An einem Workshop teilnehmen",
+    "attendTrainingWorkshop": "Als ModeratorIn ausgebildet werden",
+    "attendJuniorWorkshop": "Einen Junior-Workshop finden",
+    "area": "Suchgereich",
+    "all": "alle"
   },
   "results": {
-    "workshop": "workshop",
-    "training": "training",
-    "junior": "junior",
-    "orOnline": "or Online",
-    "doYouWantOnline": "Do you want to include online workshops?",
-    "includeOnline": "View online workshops",
-    "lastUpdate": "Last update:",
-    "for": "for",
-    "around": "around",
-    "today": "today",
-    "yesterday": "yesterday",
-    "missingWorkshop": "Your workshop doesn't appear? Check the guide on the homepage!"
+    "workshop": "Workshop",
+    "training": "Ausbildung",
+    "junior": "Junior",
+    "orOnline": "oder online",
+    "doYouWantOnline": "Möchten Sie Online-Workshops einschliessen?",
+    "includeOnline": "Online-Workshops einschliessen",
+    "lastUpdate": "letzte Aktualisierung:",
+    "for": "in",
+    "around": "rund um",
+    "today": "heute",
+    "yesterday": "gestern",
+    "missingWorkshop": "Ihre Workshop wird nicht angezeigt? Schauen Sie die Anleitungen auf der Startseite nach!"
   },
   "resultsListing": {
     "online": "Online",
-    "book": "Book a ticket",
-    "bookShort": "Book",
-    "soldOut": "[SOLD OUT] - Check"
+    "book": "Ticket buchen",
+    "bookShort": "Buchen",
+    "soldOut": "[AUSGEKAUFT] - bitte überprüfen"
   },
   "qa": {
-    "title": "What is Find a Fresk?",
-    "description": "Find a Fresk is a search engine that lists Fresk-type workshops in France.",
+    "title": "Was ist Find a Fresk?",
+    "description": "Find a Fresk ist eine Suchmachine, die Workshops auflistet, die Climate Fresk ähneln.",
     "sections": {
       "interest": {
-        "title": "What is the goal of Find a Fresk?",
-        "description": "Find a Fresk is a platform that allows you to find a Fresk-type workshop in your department. Currently listed workshops include: Fresque du Climat, Atelier 2tonnes, Fresque de la Diversité, Fresque Océane, Fresque de la Construction, Fresque Agri'Alim, Fresque des Nouveaux Récits, Fresque de la Mobilité, Fresque de l'Alimentation, Atelier Inventons Nos Vies Bas Carbone, Atelier OGRE, Fresque de l'Eau, Fresque de l'Économie Circulaire, Ateliers Futurs Proches, Fresque du Textile, Fresque des Déchets, Fresque des Frontières Planétaires, Atelier Horizons Décarbonés, Atelier 2030 Glorieuses, Fresque de la Biodiversité, Fresque du Sexisme, Fresque du Numérique, Puzzle Climat, Fresque de la Finance, Fresque de la RSE, Atelier des Transitions Urbaines, Cyber Fresque, Fresque du Plastique, Fresque du Bénévolat. Workshop reservations are made through associated ticketing platforms. We are not affiliated with any of these structures."
+        "title": "Welchen Zweck erfüllt Find a Fresk?",
+        "description": "Find a Fresk ist eine Platform, die es Ihnen ermöglicht, Workshops mit einem nachhaltigen und sozialen Thema in Ihre Nähe zu finden. Zu den derzeit aufgeführten Workshops gehören: Fresque du Climat, Atelier 2tonnes, Fresque de la Diversité, Fresque Océane, Fresque de la Construction, Fresque Agri'Alim, Fresque des Nouveaux Récits, Fresque de la Mobilité, Fresque de l'Alimentation, Atelier Inventons Nos Vies Bas Carbone, Atelier OGRE, Fresque de l'Eau, Fresque de l'Économie Circulaire, Ateliers Futurs Proches, Fresque du Textile, Fresque des Déchets, Fresque des Frontières Planétaires, Atelier Horizons Décarbonés, Atelier 2030 Glorieuses, Fresque de la Biodiversité, Fresque du Sexisme, Fresque du Numérique, Puzzle Climat, Fresque de la Finance, Fresque de la RSE, Atelier des Transitions Urbaines, Cyber Fresque, Fresque du Plastique, Fresque du Bénévolat. Reservierungen werden über die entsprechenden Ticketplattformen vorgenommen. Wir sind mit keiner diese Strukturen verbunden."
       },
       "functionality": {
-        "title": "How does Find a Fresk work?",
-        "description": "Find a Fresk's algorithms analyze various Fresk workshop reservation platforms (Billetweb.fr, Eventbrite.fr, Fresqueduclimat.org) to aggregate them and make their search more accessible. The list of workshops on our platform is NOT exhaustive."
+        "title": "Wie funktioniert Find a Fresk?",
+        "description": "Die Algorithmen von Find a Fresk sammeln Workshop-Veranstaltungen von verschiedenen Reservierungsplattformen (z.B. Billetweb.fr, Eventbrite.fr, Fresqueduclimat.org), um die Suche zu vereinfachen. Die Liste der Workshops auf unserer Plattform is NICHT vollständig."
       },
       "non_profit": {
-        "title": "Is Find a Fresk non-profit?",
-        "description": "Yes, Find a Fresk is non-profit. The platform is free, ad-free, and does not require registration. We comply with GDPR by not storing any personal data and comply with the European cookie directive by not storing cookies. The <a href='https://github.com/openfresque/trouver-une-fresque-scraper'>source code is freely available</a>."
+        "title": "Ist Find a Fresk eine gemeinnützige Organisation?",
+        "description": "Tatsächlich. Die Plattform ist kostenlos, werbefrei und erfordert keine Registrierung. Wir halten uns an die DSGVO, indem wir keine personenbezogenen Daten speichern, und an die europäische Cookie-Richtlinie, indem wir keine Cookies speichern. Der <a href='https://github.com/openfresque/trouver-une-fresque-scraper'>Quellcode ist frei verfügbar</a>."
       },
       "support": {
-        "title": "How can I support the platform's development?",
-        "description": "Developing open-source software takes time and money, not only for the initial work but also for ongoing maintenance. If you wish to support the development of this platform, you can <a href='https://fr.liberapay.com/trouver-une-fresque/'>contribute financially via Liberapay</a> (payment via PayPal). You can also share our platform on social media. Thank you!"
+        "title": "Wie kann ich die Entwicklung der Plattform unterstützen?",
+        "description": "Die Entwicklung von Open-Source-Software kostet Zeit und Geld, nicht nur für die anfängliche Arbeit aber auch für die laufende Wartung. Wenn Sie die Entwicklung dieser Plattform unterstützen möchten, dürfen sie gerne <a href='https://fr.liberapay.com/trouver-une-fresque/'>über Liberapay einen finanziellen Beitrag leisten</a> (die Zahlung erfolgt über Paypal). Sie dürfen auch gerne unsere Plattform in den sozialen Medien teilen. Vielen Dank!"
       },
       "help": {
-        "title": "Help! I published a Fresk event that doesn't appear on Find a Fresk!",
-        "description": "Your event does not meet all the conditions to be automatically retrieved. Please modify it on the original platform after reading our <a href='https://github.com/openfresque/trouver-une-fresque-scraper/blob/main/TUTORIAL.md'>guide for Fresk organizers</a>."
+        "title": "Hilfe! Ich habe eine Workshop-Veranstaltung veröffentlicht, die nicht auf Find a Fresk angezeigt wird!",
+        "description": "Ihre Veranstaltung erfüllt nicht alle Bedingungen für eine automatische Übernahme. Bitte andern Sie sie auf der ursprüngliche Reservierungsplattform, nachdem Sie unseren <a href='https://github.com/openfresque/trouver-une-fresque-scraper/blob/main/TUTORIAL.md'>Leitfaden für Workshop-Organisatoren</a> gelesen haben."
       }
     }
   },
   "legal_mentions": {
-    "title": "Legal Notices",
+    "title": "Rechtliche Hinweise",
     "sections": {
       "edition": {
-        "title": "Edition",
-        "content": "This site is edited by <a href='https://github.com/thomas-bouvier'>Thomas Bouvier</a> and <a href='https://github.com/TimotF'>Timothé Frignac</a> and hosted by Hostinger, headquartered at HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Cyprus, contactable via: <a href='https://www.hostinger.fr/contact'>https://www.hostinger.fr/contact</a>."
+        "title": "Ausgabe",
+        "content": "Diese Webseite wird von <a href='https://github.com/thomas-bouvier'>Thomas Bouvier</a> und <a href='https://github.com/TimotF'>Timothé Frignac</a> bearbeitet und von Hostinger gehostet, das seinen Hauptsitz an HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Cyprus, hat und das unter <a href='https://www.hostinger.fr/contact'>https://www.hostinger.fr/contact</a> eirreichbar ist."
       },
       "personal_data": {
-        "title": "Personal Data",
-        "content": "Your IP address and the page reference you visited are part of the personal information stored on the server hosting this site. This data may be used to diagnose issues but will never be shared with third parties and is automatically deleted. For any questions regarding your personal data, you can contact us at: <a href='mailto:contact@trouverunefresque.org'>contact@trouverunefresque.org</a>."
+        "title": "Persönliche Daten",
+        "content": "Ihre IP-Adresse und die Adresse der Seite, die zu dieser Website verlinkt hat, sind Teil der persönlichen Daten, die auf dem Server, der diese Website hostet, gespeichert werden. Diese Daten können zur Fehlerdiagnose verwendet werden, werden aber niemals an Dritte weitergegeben und werden automatisch gelöscht. Wenn Sie Fragen zu Ihren persönlichen Daten haben, können Sie sich an uns unter <a href='mailto:contact@trouverunefresque.org'>contact@trouverunefresque.org</a> wenden."
       },
       "license": {
-        "title": "License",
-        "content": "<a href='https://github.com/openfresque/frontend/blob/main/LICENSE'>AGPL-3.0</a>"
+        "title": "Lizenz",
+        "content": "<a href='https://github.com/openfresque/frontend/blob/main/LICENSE'>AGPL-3.0</a> (auf Englisch)."
       }
     }
   },
@@ -182,8 +182,8 @@
       "description": "Contribute to a positive, ethical, and sustainable company and become an actor of change yourself"
     },
     "AtelierDesTransitionsUrbaines": {
-      "name": "Urban Transitions Workshop",
-      "description": "As a team, discover the most effective solutions for designing a resilient, happy, and carbon-free neighborhood"
+      "name": "Werkstatt für urbane Transitionen",
+      "description": "Entdecken Sie im Team die effektivsten Lösungen, um ein widerstandsfähiges, glückliches und CO₂-freies Viertel zu gestalten"
     },
     "2tonnes": {
       "name": "2tonnes Workshop",
@@ -204,10 +204,6 @@
     "CyberFresque": {
       "name": "Cyber Fresk",
       "description": "Demystify cybersecurity and boost your digital hygiene!"
-    },
-    "FresqueEntrepriseRegenerative": {
-      "name": "Fresque de l'entreprise régénérative",
-      "description": "Philosophy and practical method for organisations and territories seeking resilience"
     },
     "FresqueClimat": {
       "name": "Climate Fresk",
@@ -263,15 +259,7 @@
     },
     "2030SDGsGame": {
       "name": "2030 SDGs Game",
-      "description": "Multiplayer card-based game that experientially simulates taking the “real world” into the year 2030."
-    },
-    "AdACC": {
-      "name": "Les Ateliers de l'Adaptation au Changement Climatique",
-      "description": "Method for collectively making the best possible choices in the face of climate change"
-    },
-    "FresqueBonheurDurablePartage": {
-      "name": "Fresque du Bonheur Durable et Partage",
-      "description": "Play to become and make others a little happier"
+      "description": "Ein Multiplayer-Kartenspiel, das die „reale Welt“ im Jahr 2030 simuliert"
     }
   },
   "talkAboutIt": {
@@ -293,23 +281,23 @@
   },
   "homepage": {
     "hero": {
-      "title": "We have the objective of developing the interaction between local groups and the global community to accelerate the spread of environmental raising-awareness workshops.",
-      "subtitle": "Welcome to Find a Fresk - a platform by and for the community. Not for profit.",
-      "description": "We are an enthusiastic global movement of science-based workshop facilitators. We use tools such as the Climate Fresk workshops to engage people into meaningful action through awareness, system thinking and collective intelligence."
+      "title": "Unser Ziel ist es, die Interaktion zwischen Lokalen Gruppe und der globalen Gesellschaft zu fördern, um die Verbreitung von ansteckender Workshops zur Sensibilisierung für die Umwelt zu beschleunigen.",
+      "subtitle": "Willkommen bei Find a Fresk - eine Plattform von and für die Gesellschaft. Nicht gewinnorientiert.",
+      "description": "Wir sind eine enthusiastische globale Bewegung von wissenschaftsbasierten Workshop-Moderatoren. Wir nutzen Instrumente vie die Klima-Puzzle Workshops, um Menschen durch Bewusstsein, Systemdenken and kollektive Intelligence zu sinnvollem Handeln zu bewegen."
     },
     "movement": {
-      "title": "Climate Fresk has sparked a global movement of experience-based learning",
+      "title": "Climate Fresk hat eine globale Bewegung für erfahrungsbasiertes Lernen ausgelöst.",
       "button": "Find a Fresk"
     },
     "collaboration": {
-      "title": "None of us can do it alone!",
-      "description": "We put out a call to talk about the different ways people are Multi-Fresking internationally. We realised we have some shared pain points and even more lessons to share.",
-      "button": "Join our taskforce"
+      "title": "Keiner von uns kann es allein schaffen!",
+      "description": "Wir haben einen Aufruf veröffentlicht, um über die verschiedenen Arten zu sprechen, wie Menschen ihre Workshops international durchführen. Wir haben festgestellt, dass wir einige gemeinsame Probleme haben und noch mehr Ehrfahrungen austauschen können.",
+      "button": "Treten Sie unserer Taskforce bei (English only)"
     },
     "mapping": {
-      "title": "Mapping groups around the World!",
-      "description": "Are you part of a local group / NGO delivering workshops? We are trying to compile a list of all the Multi-Workshop groups around the world. We aim to bring visibility to these groups worldwide.",
-      "button": "Discover local groups"
+      "title": "Kartierung von Gruppen auf der ganzen Welt!",
+      "description": "Sind Sie Teil einer lokalen Gruppe oder NGO, die Workshops bietet? Wir sind dabei, eine Liste aller Multi-Workshop-Gruppen auf der ganzen Welt zu erstellen. Unser Ziel ist es, diese Gruppen weltweit bekannt zu machen.",
+      "button": "Lokale Gruppen entdecken"
     }
   },
   "taskforce": {

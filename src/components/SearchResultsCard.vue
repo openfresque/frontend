@@ -12,12 +12,15 @@
           sm="3"
           md="2"
         >
-          <v-img
-            :src="getWorkshopLogo(workshop)"
-            :alt="getWorkshopTitle(workshop)"
-            max-height="120px"
-            max-width="120px"
-          ></v-img>
+          <div class="logo-container">
+            <v-img
+              :src="getWorkshopLogo(workshop)"
+              :alt="getWorkshopTitle(workshop)"
+              width="96px"
+              height="96px"
+              contain
+            ></v-img>
+          </div>
         </v-col>
 
         <!-- workshop description -->
@@ -33,9 +36,15 @@
             {{ getWorkshopDate(workshop) }}
           </v-card-subtitle>
           <v-card-text class="text-address">
-            {{ getWorkshopAdress(workshop) }}<span v-if="props.international && !workshop.online"> {{ getFlagEmoji(props.countryCode, 'country') }}</span>
+            {{ getWorkshopAdress(workshop)
+            }}<span v-if="props.international && !workshop.online">
+              {{ getFlagEmoji(props.countryCode, 'country') }}</span
+            >
           </v-card-text>
-          <v-card-text class="text-language" v-if="props.international">
+          <v-card-text
+            class="text-language"
+            v-if="props.international"
+          >
             Language: {{ getFlagEmoji(props.languageCode, 'language') }}
           </v-card-text>
         </v-col>
@@ -55,7 +64,9 @@
             size="large"
           >
             {{
-              workshop.sold_out ? t('resultsListing.soldOut') : t('resultsListing.book')
+              workshop.sold_out
+                ? t('resultsListing.soldOut')
+                : t('resultsListing.book')
             }}
           </v-btn>
           <v-btn
@@ -65,7 +76,11 @@
             target="_blank"
             size="large"
           >
-            {{ workshop.sold_out ? t('resultsListing.soldOut') : t('resultsListing.bookShort') }}
+            {{
+              workshop.sold_out
+                ? t('resultsListing.soldOut')
+                : t('resultsListing.bookShort')
+            }}
           </v-btn>
         </v-col>
       </v-row>
@@ -74,8 +89,9 @@
 </template>
 
 <script setup lang="ts">
-  import { ATELIERS, Workshop } from '@/common/Conf'
+  import type { Workshop } from '@/common/Conf'
   import { useI18n } from 'vue-i18n'
+  import { ATELIERS } from '@/common/Conf'
   import { getFlagEmoji } from '@/utils/flagEmoji'
 
   const { t } = useI18n()
@@ -138,10 +154,8 @@
     }
 
     let ret = ''
-    if (workshop.location_name) {
-      if (workshop.location_name !== workshop.address) {
-        ret += workshop.location_name + ', '
-      }
+    if (workshop.location_name && workshop.location_name !== workshop.address) {
+      ret += workshop.location_name + ', '
     }
     if (workshop.address) {
       ret += workshop.address + ', '
@@ -206,4 +220,8 @@
       font-size: 0.85rem;
     }
   }
+</style>
+
+<style>
+  @import '@/styles/logo-container.scss';
 </style>

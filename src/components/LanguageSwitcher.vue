@@ -24,15 +24,15 @@
   const supportedLocales = Translation.supportedLocales
   const router = useRouter()
 
-  const switchLanguage = async (event: Event) => {
+  async function switchLanguage(event: Event) {
     const target = event.target as HTMLSelectElement
     const newLocale = target.value
     await Translation.switchLanguage(newLocale)
 
     try {
       await router.replace({ params: { locale: newLocale } })
-    } catch (e) {
-      console.error(e)
+    } catch (error) {
+      console.error(error)
       router.push('/')
     }
   }

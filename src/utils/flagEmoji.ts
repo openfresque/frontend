@@ -24,14 +24,17 @@ export function getFlagEmoji(
     try {
       const codePoints = targetCountryCode
         .split('')
-        .map(char => 127397 + char.charCodeAt(0))
+        .map(char => 127_397 + char.charCodeAt(0))
       return String.fromCodePoint(...codePoints)
-    } catch (e) {
-      console.error(`Could not generate flag emoji for ${type} code: ${code}`, e)
+    } catch (error) {
+      console.error(
+        `Could not generate flag emoji for ${type} code: ${code}`,
+        error
+      )
       return '🏳️' // Fallback flag
     }
   } else if (code) {
     console.warn(`Invalid ${type} code for flag emoji: ${code}`)
   }
   return '' // Return empty string if no valid code
-} 
+}

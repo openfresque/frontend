@@ -17,14 +17,20 @@
                 :href="workshop.website"
                 target="_blank"
               >
-                <v-img
-                  class="workshop-logo"
-                  :src="workshop.logo"
-                  :alt="workshop.name"
-                />
+                <div class="logo-container">
+                  <v-img
+                    class="workshop-logo"
+                    :src="workshop.logo"
+                    :alt="workshop.name"
+                  />
+                </div>
               </a>
-              <v-card-title>{{ t(`workshops.${workshop.code}.name`) }}</v-card-title>
-              <v-card-text>{{ t(`workshops.${workshop.code}.description`) }}</v-card-text>
+              <v-card-title>{{
+                t(`workshops.${workshop.code}.name`)
+              }}</v-card-title>
+              <v-card-text>{{
+                t(`workshops.${workshop.code}.description`)
+              }}</v-card-text>
             </div>
           </v-card>
         </v-col>
@@ -34,9 +40,9 @@
 </template>
 
 <script setup>
-  import { ATELIERS } from '@/common/Conf'
   import { onMounted, ref } from 'vue'
   import { useI18n } from 'vue-i18n'
+  import { ATELIERS } from '@/common/Conf'
 
   const { t } = useI18n()
   const workshops = ref([])
@@ -74,4 +80,8 @@
     margin: 0 auto; /* Center the image horizontally */
     display: block; /* Ensure the image is displayed as a block element */
   }
+</style>
+
+<style>
+  @import '@/styles/logo-container.scss';
 </style>

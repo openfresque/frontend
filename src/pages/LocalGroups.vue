@@ -21,20 +21,38 @@
 
       <!-- Map placeholder -->
       <div class="map-container mb-6">
-        <div id="talkAboutItMap" class="map-height"></div>
+        <div
+          class="map-height"
+          id="talkAboutItMap"
+        ></div>
       </div>
+
+      <p>Consult a directory compiling all local groups to date here:</p>
+
+      <v-btn
+        class="card-action-button"
+        color="primary"
+        block
+        size="large"
+        href="https://docs.climatefresk.org/share/jkxjznbpoe/p/local-structures-dAD79CNE98"
+        target="_blank"
+      >
+        Full directory of local groups
+      </v-btn>
+
+      <!-- Missing Local Groups button -->
 
       <p>
         {{ t('localGroups.missing.paragraph') }}
       </p>
 
       <v-btn
+        class="card-action-button"
         color="primary"
         block
         size="large"
         href="https://tally.so/r/mVb0Qj"
         target="_blank"
-        class="card-action-button"
       >
         {{ t('localGroups.missing.button') }}
       </v-btn>
@@ -47,14 +65,15 @@
 </template>
 
 <script setup lang="ts">
-  import { onMounted, onUnmounted, ref, computed, watch } from 'vue'
-  import { map, tileLayer, marker, Marker, Icon, LatLngTuple } from 'leaflet'
+  import type { LatLngTuple, Marker } from 'leaflet'
+  import { Icon, map, marker, tileLayer } from 'leaflet'
+  // @ts-ignore
+  import { MarkerClusterGroup } from 'leaflet.markercluster'
+  import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
   import { useI18n } from 'vue-i18n'
   import { useTheme } from 'vuetify'
   import 'leaflet/dist/leaflet.css'
   import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
-  // @ts-ignore
-  import { MarkerClusterGroup } from 'leaflet.markercluster'
 
   type LocalGroup = {
     title: string
@@ -77,20 +96,22 @@
     }).setView([46.505, 3], 2)
 
     // Fetch the remote local_groups.json data
-    const response = await fetch('https://raw.githubusercontent.com/trouver-une-fresque/trouver-une-fresque-data/main/local_groups.json')
+    const response = await fetch(
+      'https://raw.githubusercontent.com/trouver-une-fresque/trouver-une-fresque-data/main/local_groups.json'
+    )
     const localGroups: LocalGroup[] = await response.json()
     // Filter and normalize to numeric coordinates
     const validGroups = localGroups
       .filter(group => !!group.latitude && !!group.longitude)
       .filter(group => {
-        const lat = parseFloat(group.latitude)
-        const lng = parseFloat(group.longitude)
+        const lat = Number.parseFloat(group.latitude)
+        const lng = Number.parseFloat(group.longitude)
         return lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180
       })
       .map(group => ({
         title: group.title,
-        latitude: parseFloat(group.latitude),
-        longitude: parseFloat(group.longitude),
+        latitude: Number.parseFloat(group.latitude),
+        longitude: Number.parseFloat(group.longitude),
         link: group.link,
       }))
     // Create and add markers for local groups
@@ -107,25 +128,20 @@
       mymap.value.removeLayer(mapLayer.value)
     }
 
-    if (isDark.value) {
-      mapLayer.value = tileLayer(
-        'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-        {
-          maxZoom: 19,
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        }
-      )
-    } else {
-      mapLayer.value = tileLayer(
-        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        {
+    mapLayer.value = isDark.value
+      ? tileLayer(
+          'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+          {
+            maxZoom: 19,
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+          }
+        )
+      : tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
           attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        }
-      )
-    }
+        })
 
     mapLayer.value.addTo(mymap.value)
   }
@@ -143,7 +159,14 @@
     }
   })
 
-  function creerLocalGroupPins(lieux: { title: string; latitude: number; longitude: number; link: string }[]) {
+  function creerLocalGroupPins(
+    lieux: {
+      title: string
+      latitude: number
+      longitude: number
+      link: string
+    }[]
+  ) {
     const markers = lieux.reduce((acc, lieu) => {
       const popupContent = `
         <span style='font-size: 150%;'>${lieu.title}</span>
@@ -189,10 +212,9 @@
   }
 </style>
 
-
 <route>
 {
   name: 'local-groups',
   path: '/local-groups'
 }
-</route> 
+</route>

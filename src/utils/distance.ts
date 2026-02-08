@@ -1,4 +1,4 @@
-import { Coordinates } from '@/common/Conf'
+import type { Coordinates } from '@/common/Conf'
 
 export default function distanceBetween(
   { latitude: lat1, longitude: lon1 }: Coordinates,

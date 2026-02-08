@@ -32,7 +32,7 @@
   const selectedFlag = ref('France 🇫🇷')
   watch(selectedFlag, newVal => {
     if (newVal === 'Switzerland 🇨🇭') {
-      window.open('https://oneplanetfriends.org/', '_blank')
+      window.open('https://oneplanetfriends.ch/', '_blank')
       selectedFlag.value = 'France 🇫🇷'
     }
   })
