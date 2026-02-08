@@ -51,7 +51,6 @@
         <SearchResultsCard
           :workshop="item"
           :workshop-type-title="getWorkshopType(false)"
-          :title="item.title"
           :international="international"
           :language-code="item.language_code"
           :country-code="item.country_code"
