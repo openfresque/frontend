@@ -4,9 +4,9 @@
  * Automatic routes for `./src/pages/*.vue`
  */
 
+import { createRouter, createWebHistory } from 'vue-router'
 // Composables
 import Translation from '@/i18n/translation'
-import { createRouter, createWebHistory } from 'vue-router'
 
 // Import your components
 import Apropos from '@/pages/Apropos.vue'
@@ -38,7 +38,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      //path: '/:locale?',
+      // path: '/:locale?',
       path: '/',
       component: () => import('@/layouts/default.vue'),
       beforeEnter: Translation.routeMiddleware,
@@ -52,7 +52,7 @@ const router = createRouter({
           path: 'find-a-fresk',
           name: ROUTE_FIND_A_FRESK,
           component: FindAFresk,
-          alias: 'find-a-workshop'
+          alias: 'find-a-workshop',
         },
         {
           path: 'carte',
@@ -104,12 +104,12 @@ const router = createRouter({
 // Error handling for dynamic imports
 router.onError((err, to) => {
   if (err?.message?.includes?.('Failed to fetch dynamically imported module')) {
-    if (!localStorage.getItem('vuetify:dynamic-reload')) {
+    if (localStorage.getItem('vuetify:dynamic-reload')) {
+      console.error('Dynamic import error, reloading page did not fix it', err)
+    } else {
       console.log('Reloading page to fix dynamic import error')
       localStorage.setItem('vuetify:dynamic-reload', 'true')
       location.assign(to.fullPath)
-    } else {
-      console.error('Dynamic import error, reloading page did not fix it', err)
     }
   } else {
     console.error(err)

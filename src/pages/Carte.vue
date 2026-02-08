@@ -8,16 +8,17 @@
 </template>
 
 <script lang="ts" setup>
-  import { onMounted, onUnmounted, ref, computed, watch } from 'vue'
-  import { map, tileLayer, marker, Marker, Icon, LatLngTuple } from 'leaflet'
-  import { useI18n } from 'vue-i18n'
-  import { useTheme } from 'vuetify'
-  import 'leaflet/dist/leaflet.css'
-  import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
+  import type { LatLngTuple, Marker } from 'leaflet'
+  import type { Workshop } from '@/common/Conf'
+  import { Icon, map, marker, tileLayer } from 'leaflet'
   // @ts-ignore
   import { MarkerClusterGroup } from 'leaflet.markercluster'
-  import { Workshop } from '@/common/Conf'
+  import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+  import { useI18n } from 'vue-i18n'
+  import { useTheme } from 'vuetify'
   import { State } from '@/state/State'
+  import 'leaflet/dist/leaflet.css'
+  import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 
   type WorkshopCarte = {
     nom: string
@@ -74,25 +75,20 @@
       mymap.value.removeLayer(mapLayer.value)
     }
 
-    if (isDark.value) {
-      mapLayer.value = tileLayer(
-        'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-        {
-          maxZoom: 19,
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        }
-      )
-    } else {
-      mapLayer.value = tileLayer(
-        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        {
+    mapLayer.value = isDark.value
+      ? tileLayer(
+          'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+          {
+            maxZoom: 19,
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+          }
+        )
+      : tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
           attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        }
-      )
-    }
+        })
 
     mapLayer.value.addTo(mymap.value)
   }
@@ -113,12 +109,12 @@
   function creerPins(lieux: WorkshopCarte[]) {
     const markers = lieux.reduce((markers, lieu) => {
       let reservation_str = ''
-      if (typeof lieu.reservation !== 'undefined') {
+      if (lieu.reservation === undefined) {
+        reservation_str = lieu.reservation
+      } else {
         if (lieu.reservation.indexOf('http') === 0) {
           reservation_str = `<a href="${lieu.reservation}">${lieu.reservation.slice(0, 35) + '...'}</a>`
         }
-      } else {
-        reservation_str = lieu.reservation
       }
 
       const string_popup = `

@@ -108,7 +108,7 @@
             :last-update-date="lastUpdateDate"
             :search-by-dpt="isSearchByDpt()"
             :dpt-nb="getDptCode()"
-            @showOnline="online = true"
+            @show-online="online = true"
           ></SearchResultsList>
         </v-tabs-window-item>
 
@@ -124,7 +124,7 @@
             :last-update-date="lastUpdateDate"
             :search-by-dpt="isSearchByDpt()"
             :dpt-nb="getDptCode()"
-            @showOnline="online = true"
+            @show-online="online = true"
           ></SearchResultsList>
           <div class="results ma-2"></div>
         </v-tabs-window-item>
@@ -141,7 +141,7 @@
             :last-update-date="lastUpdateDate"
             :search-by-dpt="isSearchByDpt()"
             :dpt-nb="getDptCode()"
-            @showOnline="online = true"
+            @show-online="online = true"
           ></SearchResultsList>
         </v-tabs-window-item>
       </v-tabs-window>
@@ -150,15 +150,16 @@
 </template>
 
 <script lang="ts" setup>
-  import { Workshop } from '@/common/Conf'
+  import type { Workshop } from '@/common/Conf'
+  import type { AutocompleteItem, Commune, Departement } from '@/state/State'
+  import { onMounted, ref } from 'vue'
+  import { useI18n } from 'vue-i18n'
   import router, { ROUTE_SEARCH_CITY, ROUTE_SEARCH_DPT } from '@/router'
   import {
     rechercheCommuneDescriptor,
     rechercheDepartementDescriptor,
   } from '@/routing/DynamicURLs'
-  import { AutocompleteItem, Commune, Departement, State } from '@/state/State'
-  import { ref, onMounted } from 'vue'
-  import { useI18n } from 'vue-i18n'
+  import { State } from '@/state/State'
 
   const { t } = useI18n()
 

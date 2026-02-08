@@ -162,9 +162,9 @@
 </template>
 
 <script lang="ts" setup>
+  import { ref } from 'vue'
   import { useI18n } from 'vue-i18n'
   import SearchBoxes from '@/components/SearchBoxes.vue'
-  import { ref } from 'vue'
 
   const { t } = useI18n()
 

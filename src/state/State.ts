@@ -1,17 +1,13 @@
-import {
+import type {
   CodeDepartement,
-  ISODateString,
   SearchType,
-  TYPE_RECHERCHE_PAR_DEFAUT,
   Workshop,
   WorkshopsParDepartement,
 } from '../common/Conf'
+
 import { RemoteConfig } from '../utils/RemoteConfig'
 import { Strings } from '../utils/Strings'
 import { Autocomplete } from './Autocomplete'
-
-export type { CodeDepartement, ISODateString, SearchType, Workshop, WorkshopsParDepartement }
-export { TYPE_RECHERCHE_PAR_DEFAUT }
 
 export type CodeTrancheAge = 'plus75ans'
 export type TrancheAge = {
@@ -78,18 +74,21 @@ export type Departement = {
 
 // Permet de convertir un nom de departement en un chemin d'url correct (remplacement des caractères
 // non valides comme les accents ou les espaces)
-export const libelleUrlPathDuDepartement = (departement: Departement) => {
+export function libelleUrlPathDuDepartement(departement: Departement) {
   return Strings.toReadableURLPathValue(departement.nom_departement)
 }
 
 function convertDepartementForSort(codeDepartement: CodeDepartement) {
   switch (codeDepartement) {
-    case '2A':
+    case '2A': {
       return '20A'
-    case '2B':
+    }
+    case '2B': {
       return '20B'
-    default:
+    }
+    default: {
       return codeDepartement
+    }
   }
 }
 
@@ -112,7 +111,7 @@ export type CommunesParAutocomplete = Map<string, Commune[]>
 
 // Permet de convertir un nom de departement en un chemin d'url correct (remplacement des caractères
 // non valides comme les accents ou les espaces)
-export const libelleUrlPathDeCommune = (commune: Commune) => {
+export function libelleUrlPathDeCommune(commune: Commune) {
   return Strings.toReadableURLPathValue(commune.nom)
 }
 
@@ -180,7 +179,11 @@ export function searchTypeConfigFromSearch(
   searchRequest: SearchRequest | void,
   fallback: Exclude<SearchType, 'all'>
 ) {
-  return searchTypeConfigFor(searchRequest ? searchRequest.type as Exclude<SearchType, 'all'> : fallback)
+  return searchTypeConfigFor(
+    searchRequest
+      ? (searchRequest.type as Exclude<SearchType, 'all'>)
+      : fallback
+  )
 }
 export function searchTypeConfigFor(
   searchType: Exclude<SearchType, 'all'>
@@ -226,9 +229,10 @@ export class State {
     return {
       workshopsDisponibles: workshops,
       codeDepartements: [],
-      derniereMiseAJour: workshops.length
-        ? workshops[0].scrape_date
-        : new Date().toISOString(),
+      derniereMiseAJour:
+        workshops.length > 0
+          ? workshops[0].scrape_date
+          : new Date().toISOString(),
     }
   }
 
@@ -246,9 +250,10 @@ export class State {
           workshop.online || codesDepartements.includes(workshop.department)
       ),
       codeDepartements: codesDepartements,
-      derniereMiseAJour: workshops.length
-        ? workshops[0].scrape_date
-        : new Date().toISOString(),
+      derniereMiseAJour:
+        workshops.length > 0
+          ? workshops[0].scrape_date
+          : new Date().toISOString(),
     }
 
     return workshopsParDepartement
@@ -290,3 +295,12 @@ export class State {
     return commune || State.COMMUNE_VIDE
   }
 }
+
+export {
+  TYPE_RECHERCHE_PAR_DEFAUT,
+  type CodeDepartement,
+  type ISODateString,
+  type SearchType,
+  type Workshop,
+  type WorkshopsParDepartement,
+} from '../common/Conf'

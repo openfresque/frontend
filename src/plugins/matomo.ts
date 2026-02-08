@@ -1,13 +1,13 @@
 // @ts-ignore
-import VueMatomo from 'vue-matomo'
-import { Router } from 'vue-router'
+
+import type { Router } from 'vue-router'
 
 function matomoOptions(router: Router) {
   return {
     host: 'https://analytics.climatefresk.org',
     siteId: 12,
     trackerFileName: 'matomo',
-    router: router,
+    router,
     enableLinkTracking: true,
     requireConsent: false,
     trackInitialView: true,
@@ -22,4 +22,6 @@ function matomoOptions(router: Router) {
   }
 }
 
-export { matomoOptions, VueMatomo }
+export { matomoOptions }
+
+export { default as VueMatomo } from 'vue-matomo'

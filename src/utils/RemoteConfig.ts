@@ -1,4 +1,5 @@
-import { DataUrlGenerator, GITHUB_DATA_URLS } from './LocalConfig'
+import type { DataUrlGenerator } from './LocalConfig'
+import { GITHUB_DATA_URLS } from './LocalConfig'
 
 type RemoteConfigEntries = {
   path_contributors: string

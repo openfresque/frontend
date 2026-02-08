@@ -1,5 +1,5 @@
 import { Strings } from '../utils/Strings'
-import { Commune, Departement } from './State'
+import type { Commune, Departement } from './State'
 
 // Ce type (dont il est impossible de créer une instance)
 // permet de ne pas simplement faire un alias de string, et ainsi
@@ -120,7 +120,7 @@ export class Autocomplete {
     const prefixes = await this.getAutocompletePrefixes()
     for (let size = term.length; size > 0; --size) {
       // Par construction, une sous partie d'un NormalizedSearch est un NormalizedSearch
-      const subPrefix = term.substring(0, size) as NormalizedSearch
+      const subPrefix = term.slice(0, Math.max(0, size)) as NormalizedSearch
       if (prefixes.has(subPrefix)) {
         return subPrefix
       }

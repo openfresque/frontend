@@ -29,9 +29,9 @@
 
 <script lang="ts" setup>
   import { useI18n } from 'vue-i18n'
-  import SearchBoxes from '@/components/SearchBoxes.vue'
   import LogoWall from '@/components/LogoWall.vue'
   import QnA from '@/components/QnA.vue'
+  import SearchBoxes from '@/components/SearchBoxes.vue'
 
   const { t } = useI18n()
 </script>

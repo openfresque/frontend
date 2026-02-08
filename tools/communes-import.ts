@@ -1,7 +1,7 @@
 /// <reference path="./types.d.ts" />
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
 import leven from 'leven'
 import fetch from 'node-fetch'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import {
   rechercheCommuneDescriptor,
   rechercheDepartementDescriptor,
@@ -22,8 +22,7 @@ function keyOf(commune: Commune): string {
 function search(communes: Commune[], query: string): Commune[] {
   return communes.filter(
     c =>
-      c.codePostal.startsWith(query) ||
-      c.fullTextNormalizedNom.indexOf(query) !== -1
+      c.codePostal.startsWith(query) || c.fullTextNormalizedNom.includes(query)
   )
 }
 
@@ -73,9 +72,12 @@ function generateFilesForQuery(
       matchingCommunes.length < MAX_NUMBER_OF_COMMUNES_PER_FILE ||
       query.length === MAX_AUTOCOMPLETE_TRIGGER_LENGTH
     ) {
-      matchingCommunesByKey.forEach((commune, matchingCommuneKey) =>
+      for (const [
+        matchingCommuneKey,
+        commune,
+      ] of matchingCommunesByKey.entries()) {
         unreferencedCommuneKeys.delete(matchingCommuneKey)
-      )
+      }
 
       matchingCommunes.sort(communeComparatorFor(query))
 
@@ -104,11 +106,11 @@ function generateFilesForQuery(
       }, [] as MatchingCommunesSearchResult[])
 
       let filteredMatchingCommunesByKey = new Map(matchingCommunesByKey)
-      subQueries.forEach(r => {
-        r.matchingCommunesByKey.forEach((commune, key) =>
+      for (const r of subQueries) {
+        for (const [key, commune] of r.matchingCommunesByKey.entries()) {
           filteredMatchingCommunesByKey.delete(key)
-        )
-      })
+        }
+      }
 
       // Here, the idea is to add communes with name shorter than the autocomplete keys
       // For example, we have the communes named "Y" and "Sai" while minimum autocomplete for these
@@ -122,13 +124,13 @@ function generateFilesForQuery(
             commune.fullTextNormalizedNom.length === query.length
         )
       )
-      if (filteredMatchingCommunesByKey.size) {
+      if (filteredMatchingCommunesByKey.size > 0) {
         const communesMatchantExactement = [
           ...filteredMatchingCommunesByKey.values(),
         ]
-        ;[...filteredMatchingCommunesByKey.keys()].forEach(k =>
+        for (const k of filteredMatchingCommunesByKey.keys()) {
           unreferencedCommuneKeys.delete(k)
-        )
+        }
 
         communesMatchantExactement.sort(communeComparatorFor(query))
 
@@ -140,7 +142,7 @@ function generateFilesForQuery(
           JSON.stringify({
             query,
             communes:
-              compactedCommunesNonGereesParLesSousNoeuds /*, subsequentAutoCompletes: true */,
+              compactedCommunesNonGereesParLesSousNoeuds /* , subsequentAutoCompletes: true */,
           }),
           'utf8'
         )
@@ -156,8 +158,8 @@ function generateFilesForQuery(
 
       return subQueries
     }
-  } catch (e) {
-    console.error(e)
+  } catch (error) {
+    console.error(error)
     return []
   }
 }
@@ -205,35 +207,113 @@ const COLLECTIVITES_OUTREMER = new Map<string, Partial<Commune>>([
 ])
 
 function completerCommunesOutremer(commune: Commune): Commune {
-  if (COLLECTIVITES_OUTREMER.has(commune.code)) {
-    return { ...commune, ...COLLECTIVITES_OUTREMER.get(commune.code) }
-  } else {
-    return commune
-  }
+  return COLLECTIVITES_OUTREMER.has(commune.code)
+    ? { ...commune, ...COLLECTIVITES_OUTREMER.get(commune.code) }
+    : commune
 }
 
 const PARIS_COORDS_OVERRIDES = new Map<string, [number, number]>(
   [
-    { c: '75056', z: '75001', g: [2.336157203926649, 48.86283948229915] },
-    { c: '75056', z: '75002', g: [2.3432755443949866, 48.86889037261654] },
-    { c: '75056', z: '75003', g: [2.3607568335500297, 48.86286492639361] },
-    { c: '75056', z: '75004', g: [2.357594022703559, 48.85439581632856] },
-    { c: '75056', z: '75005', g: [2.351415238575416, 48.84355063561869] },
-    { c: '75056', z: '75006', g: [2.334203785384528, 48.84898025632432] },
-    { c: '75056', z: '75007', g: [2.31272844148442, 48.85710142473717] },
-    { c: '75056', z: '75008', g: [2.3133060597411697, 48.87297052862936] },
-    { c: '75056', z: '75009', g: [2.33864166874507, 48.87729243796416] },
-    { c: '75056', z: '75010', g: [2.360651913467299, 48.87654029132932] },
-    { c: '75056', z: '75011', g: [2.378928291242735, 48.86001335053879] },
-    { c: '75056', z: '75012', g: [2.395032220296042, 48.84042230655008] },
-    { c: '75056', z: '75013', g: [2.3620907702278324, 48.82904787007054] },
-    { c: '75056', z: '75014', g: [2.327993119650175, 48.83025514870483] },
-    { c: '75056', z: '75015', g: [2.29297365224418, 48.84058573684937] },
-    { c: '75056', z: '75016', g: [2.266717150629358, 48.85367625689213] },
-    { c: '75056', z: '75017', g: [2.3071264684475423, 48.88793519362565] },
-    { c: '75056', z: '75018', g: [2.349642564782915, 48.89232572560189] },
-    { c: '75056', z: '75019', g: [2.3868229216398484, 48.887176262044115] },
-    { c: '75056', z: '75020', g: [2.4032033913955675, 48.862725685060646] },
+    {
+      c: '75056',
+      z: '75001',
+      g: [2.336_157_203_926_649, 48.862_839_482_299_15],
+    },
+    {
+      c: '75056',
+      z: '75002',
+      g: [2.343_275_544_394_986_6, 48.868_890_372_616_54],
+    },
+    {
+      c: '75056',
+      z: '75003',
+      g: [2.360_756_833_550_029_7, 48.862_864_926_393_61],
+    },
+    {
+      c: '75056',
+      z: '75004',
+      g: [2.357_594_022_703_559, 48.854_395_816_328_56],
+    },
+    {
+      c: '75056',
+      z: '75005',
+      g: [2.351_415_238_575_416, 48.843_550_635_618_69],
+    },
+    {
+      c: '75056',
+      z: '75006',
+      g: [2.334_203_785_384_528, 48.848_980_256_324_32],
+    },
+    {
+      c: '75056',
+      z: '75007',
+      g: [2.312_728_441_484_42, 48.857_101_424_737_17],
+    },
+    {
+      c: '75056',
+      z: '75008',
+      g: [2.313_306_059_741_169_7, 48.872_970_528_629_36],
+    },
+    {
+      c: '75056',
+      z: '75009',
+      g: [2.338_641_668_745_07, 48.877_292_437_964_16],
+    },
+    {
+      c: '75056',
+      z: '75010',
+      g: [2.360_651_913_467_299, 48.876_540_291_329_32],
+    },
+    {
+      c: '75056',
+      z: '75011',
+      g: [2.378_928_291_242_735, 48.860_013_350_538_79],
+    },
+    {
+      c: '75056',
+      z: '75012',
+      g: [2.395_032_220_296_042, 48.840_422_306_550_08],
+    },
+    {
+      c: '75056',
+      z: '75013',
+      g: [2.362_090_770_227_832_4, 48.829_047_870_070_54],
+    },
+    {
+      c: '75056',
+      z: '75014',
+      g: [2.327_993_119_650_175, 48.830_255_148_704_83],
+    },
+    {
+      c: '75056',
+      z: '75015',
+      g: [2.292_973_652_244_18, 48.840_585_736_849_37],
+    },
+    {
+      c: '75056',
+      z: '75016',
+      g: [2.266_717_150_629_358, 48.853_676_256_892_13],
+    },
+    {
+      c: '75056',
+      z: '75017',
+      g: [2.307_126_468_447_542_3, 48.887_935_193_625_65],
+    },
+    {
+      c: '75056',
+      z: '75018',
+      g: [2.349_642_564_782_915, 48.892_325_725_601_89],
+    },
+    {
+      c: '75056',
+      z: '75019',
+      g: [2.386_822_921_639_848_4, 48.887_176_262_044_115],
+    },
+    {
+      c: '75056',
+      z: '75020',
+      g: [2.403_203_391_395_567_5, 48.862_725_685_060_646],
+    },
   ].map<[string, [number, number]]>(communeDef => [
     `${communeDef.c}__${communeDef.z}`,
     communeDef.g as [number, number],
@@ -260,7 +340,7 @@ Promise.all([
   ),
 ]).then(([rawCommunes, departements]: [RawCommune[], Departement[]]) => {
   const communes: Commune[] = rawCommunes
-    .map(rawCommune =>
+    .flatMap(rawCommune =>
       rawCommune.codesPostaux.map(cp => ({
         ...rawCommune,
         codePostal: cp,
@@ -273,7 +353,6 @@ Promise.all([
         fullTextNormalizedNom: Strings.toFullTextNormalized(rawCommune.nom),
       }))
     )
-    .flat()
     .map(commune => completerCommunesOutremer(commune))
     .map(commune => surchargerCoordonnees(commune))
 
@@ -309,7 +388,7 @@ Promise.all([
     mkdirSync(sitemapDir, { recursive: true })
   }
 
-  departements.forEach(department => {
+  for (const department of departements) {
     // language=xml
     const content = `
 <?xml version="1.0" encoding="UTF-8"?>
@@ -348,7 +427,7 @@ Promise.all([
       content,
       'utf8'
     )
-  })
+  }
 
   const siteMapIndexDynamicContent = ([] as string[])
     .concat(

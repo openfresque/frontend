@@ -89,8 +89,9 @@
 </template>
 
 <script setup lang="ts">
-  import { ATELIERS, Workshop } from '@/common/Conf'
+  import type { Workshop } from '@/common/Conf'
   import { useI18n } from 'vue-i18n'
+  import { ATELIERS } from '@/common/Conf'
   import { getFlagEmoji } from '@/utils/flagEmoji'
 
   const { t } = useI18n()
@@ -153,10 +154,8 @@
     }
 
     let ret = ''
-    if (workshop.location_name) {
-      if (workshop.location_name !== workshop.address) {
-        ret += workshop.location_name + ', '
-      }
+    if (workshop.location_name && workshop.location_name !== workshop.address) {
+      ret += workshop.location_name + ', '
     }
     if (workshop.address) {
       ret += workshop.address + ', '

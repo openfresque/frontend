@@ -25,7 +25,7 @@ const Translation = {
       Translation.defaultLocale
 
     return {
-      locale: locale,
+      locale,
       localeNoRegion: locale.split('-')[0],
     }
   },
@@ -84,13 +84,13 @@ const Translation = {
   // Former version of routeMiddleware with locale-based routing
   async routeMiddlewareWithLocale(to, _from, next) {
     const paramLocale = to.params.locale
- 
+
     if (!Translation.isLocaleSupported(paramLocale)) {
         return next(Translation.guessDefaultLocale())
     }
- 
+
     await Translation.switchLanguage(paramLocale)
- 
+
     return next()
   }
   */

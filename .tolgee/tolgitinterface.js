@@ -1,6 +1,6 @@
 import { flatten } from 'flat'
-import * as fs from 'fs'
 import stableStringify from 'json-stable-stringify'
+import * as fs from 'node:fs'
 
 /**
  * Pull function receives an object of localized translations
@@ -9,8 +9,8 @@ import stableStringify from 'json-stable-stringify'
  * { [i18code]: { [key]: value } }.
  *
  */
-export const pull = translations => {
-  for (let code in translations) {
+export function pull(translations) {
+  for (const code in translations) {
     fs.writeFileSync(
       `../src/i18n/locales/${code}.json`,
       stableStringify(translations[code] || {}, { space: 4 })
@@ -18,10 +18,10 @@ export const pull = translations => {
   }
 }
 
-export const listI18nCodes = () => {
+export function listI18nCodes() {
   const langs = fs.readdirSync('../src/i18n/locales/')
   const codes = []
-  for (let lang of langs) {
+  for (const lang of langs) {
     const code = lang.slice(0, -5)
     codes.push(code)
   }
@@ -32,13 +32,13 @@ export const listI18nCodes = () => {
  * Push function reads the repository and creates localized translations
  * @return { [i18ncode]: { [key]: value }}
  */
-export const push = () => {
+export function push() {
   const translationsByCode = {}
   const tags = {}
 
   const codes = listI18nCodes()
 
-  for (let code of codes) {
+  for (const code of codes) {
     const assets = JSON.parse(
       fs.readFileSync(`../src/i18n/locales/${code}.json`)
     )

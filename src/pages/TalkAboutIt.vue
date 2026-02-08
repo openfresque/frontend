@@ -105,17 +105,18 @@
 </template>
 
 <script setup lang="ts">
-  import { onMounted, onUnmounted, ref, computed, watch } from 'vue'
-  import { map, tileLayer, marker, Marker, Icon, LatLngTuple } from 'leaflet'
-  import { useI18n } from 'vue-i18n'
-  import { useTheme } from 'vuetify'
-  import 'leaflet/dist/leaflet.css'
-  import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
+  import type { LatLngTuple, Marker } from 'leaflet'
+  import type { Workshop as BaseWorkshop } from '@/common/Conf'
+  import { Icon, map, marker, tileLayer } from 'leaflet'
   // @ts-ignore
   import { MarkerClusterGroup } from 'leaflet.markercluster'
+  import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+  import { useI18n } from 'vue-i18n'
+  import { useTheme } from 'vuetify'
   import SearchResultsList from '@/components/SearchResultsList.vue'
   import { getFlagEmoji } from '@/utils/flagEmoji'
-  import { Workshop as BaseWorkshop } from '@/common/Conf'
+  import 'leaflet/dist/leaflet.css'
+  import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
   // Extend the Conf.Workshop type to carry optional language and country codes
   type WorkshopWithLang = BaseWorkshop & {
     language_code?: string
@@ -197,8 +198,8 @@
           title: raw.title,
           language_code: raw.language_code || '',
           country_code: raw.country_code || '',
-          longitude: parseFloat(raw.longitude || '0'),
-          latitude: parseFloat(raw.latitude || '0'),
+          longitude: Number.parseFloat(raw.longitude || '0'),
+          latitude: Number.parseFloat(raw.latitude || '0'),
           tickets_link: raw.tickets_link || '',
           location_name: raw.location_name || '',
           address: raw.address || '',
@@ -214,9 +215,9 @@
           source_link: raw.tickets_link || '',
           zip_code: '',
           workshop_type:
-            raw.workshop_type !== undefined
-              ? parseInt(String(raw.workshop_type), 10)
-              : 0,
+            raw.workshop_type === undefined
+              ? 0
+              : Number.parseInt(String(raw.workshop_type), 10),
           sold_out: false,
           training: false,
         })
@@ -228,8 +229,8 @@
         .filter((workshop: RawWorkshopData) => {
           const latStr = workshop.latitude ?? ''
           const lonStr = workshop.longitude ?? ''
-          const lat = parseFloat(latStr)
-          const lon = parseFloat(lonStr)
+          const lat = Number.parseFloat(latStr)
+          const lon = Number.parseFloat(lonStr)
           return (
             !isNaN(lat) &&
             !isNaN(lon) &&
@@ -244,8 +245,8 @@
       const workshopsCarte = workshopsFilteredForMap.map<WorkshopCarte>(
         (workshop: RawWorkshopData) => ({
           nom: workshop.title,
-          longitude: parseFloat(workshop.longitude!),
-          latitude: parseFloat(workshop.latitude!),
+          longitude: Number.parseFloat(workshop.longitude!),
+          latitude: Number.parseFloat(workshop.latitude!),
           reservation: workshop.tickets_link,
           location_name: workshop.location_name || undefined,
           address: workshop.address || undefined,
@@ -279,25 +280,20 @@
       mymap.value.removeLayer(mapLayer.value)
     }
 
-    if (isDark.value) {
-      mapLayer.value = tileLayer(
-        'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-        {
-          maxZoom: 19,
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        }
-      )
-    } else {
-      mapLayer.value = tileLayer(
-        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        {
+    mapLayer.value = isDark.value
+      ? tileLayer(
+          'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+          {
+            maxZoom: 19,
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+          }
+        )
+      : tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
           attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        }
-      )
-    }
+        })
 
     mapLayer.value.addTo(mymap.value)
   }
@@ -318,12 +314,12 @@
   function creerPins(lieux: WorkshopCarte[]) {
     const markers = lieux.reduce((markers, lieu) => {
       let reservation_str = ''
-      if (typeof lieu.reservation !== 'undefined') {
+      if (lieu.reservation === undefined) {
+        reservation_str = '-' // Default value if reservation is undefined
+      } else {
         if (lieu.reservation.indexOf('http') === 0) {
           reservation_str = `<a href="${lieu.reservation}" target="_blank" rel="noopener noreferrer">${lieu.reservation.slice(0, 35) + '...'}</a>`
         }
-      } else {
-        reservation_str = '-' // Default value if reservation is undefined
       }
 
       // Flag Emoji Logic

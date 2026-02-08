@@ -2,8 +2,8 @@
   <div>
     <router-view />
     <v-autocomplete
-      ref="autocompleteRef"
       class="search-field"
+      ref="autocompleteRef"
       :label="t('searchField')"
       max-width="500px"
       variant="solo"
@@ -46,14 +46,15 @@
 </template>
 
 <script lang="ts" setup>
+  import type { AutocompleteItem, Commune, Departement } from '@/state/State'
+  import { onMounted, ref } from 'vue'
+  import { useI18n } from 'vue-i18n'
   import router from '@/router'
   import {
     rechercheCommuneDescriptor,
     rechercheDepartementDescriptor,
   } from '@/routing/DynamicURLs'
-  import { AutocompleteItem, Commune, Departement, State } from '@/state/State'
-  import { ref, onMounted } from 'vue'
-  import { useI18n } from 'vue-i18n'
+  import { State } from '@/state/State'
 
   const { t } = useI18n()
 
@@ -140,10 +141,10 @@
   }
 
   onMounted(() => {
-    if (!props.modelValue) {
-      search('')
-    } else {
+    if (props.modelValue) {
       search(props.modelValue.title)
+    } else {
+      search('')
     }
 
     // Focus the input element on mount if autofocus prop is true

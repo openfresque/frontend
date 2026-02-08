@@ -97,7 +97,9 @@ export const ATELIERS: Record<number, Atelier> = {
     code: 'AtelierInventonsNosViesBasCarbone',
     logo: '/assets/images/logo/logo_INVBC.webp',
     name: i18n.global.t('workshops.AtelierInventonsNosViesBasCarbone.name'),
-    description: i18n.global.t('workshops.AtelierInventonsNosViesBasCarbone.description'),
+    description: i18n.global.t(
+      'workshops.AtelierInventonsNosViesBasCarbone.description'
+    ),
     promoted: true,
     website: 'https://www.nosviesbascarbone.org/latelier/',
   },
@@ -169,7 +171,9 @@ export const ATELIERS: Record<number, Atelier> = {
     code: 'AtelierDesTransitionsUrbaines',
     logo: '/assets/images/logo/logo_atelierDesTransitionsUrbaines.webp',
     name: i18n.global.t('workshops.AtelierDesTransitionsUrbaines.name'),
-    description: i18n.global.t('workshops.AtelierDesTransitionsUrbaines.description'),
+    description: i18n.global.t(
+      'workshops.AtelierDesTransitionsUrbaines.description'
+    ),
     promoted: true,
     website: 'https://www.ateliertransitionsurbaines.org/',
   },
@@ -233,7 +237,9 @@ export const ATELIERS: Record<number, Atelier> = {
     code: 'FresqueFrontieresPlanetaires',
     logo: '/assets/images/logo/logo_FDFP.webp',
     name: i18n.global.t('workshops.FresqueFrontieresPlanetaires.name'),
-    description: i18n.global.t('workshops.FresqueFrontieresPlanetaires.description'),
+    description: i18n.global.t(
+      'workshops.FresqueFrontieresPlanetaires.description'
+    ),
     promoted: true,
     website: 'https://www.1erdegre.earth/fresque-des-frontieres-planetaires',
   },

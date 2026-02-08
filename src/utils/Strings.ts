@@ -8,10 +8,7 @@ export class Strings {
     return pad + value
   }
 
-  public static plural(
-    value: number | null | undefined,
-    pluralForm: string = 's'
-  ) {
+  public static plural(value: number | null | undefined, pluralForm = 's') {
     return value && value > 1 ? pluralForm : ''
   }
 
@@ -19,7 +16,7 @@ export class Strings {
     if (!str) {
       return ''
     }
-    return str[0].toUpperCase() + str.substring(1)
+    return str[0].toUpperCase() + str.slice(1)
   }
 
   // FIXME move to dedicated component
