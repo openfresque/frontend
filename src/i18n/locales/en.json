@@ -205,6 +205,10 @@
       "name": "Cyber Fresk",
       "description": "Demystify cybersecurity and boost your digital hygiene!"
     },
+    "FresqueEntrepriseRegenerative": {
+      "name": "Fresque de l'entreprise régénérative",
+      "description": "Philosophy and practical method for organisations and territories seeking resilience"
+    },
     "FresqueClimat": {
       "name": "Climate Fresk",
       "description": "Do you want to act for the climate but don't have the time to become a climatologist?"
@@ -260,6 +264,14 @@
     "2030SDGsGame": {
       "name": "2030 SDGs Game",
       "description": "Multiplayer card-based game that experientially simulates taking the “real world” into the year 2030."
+    },
+    "AdACC": {
+      "name": "Les Ateliers de l'Adaptation au Changement Climatique",
+      "description": "Method for collectively making the best possible choices in the face of climate change"
+    },
+    "FresqueBonheurDurablePartage": {
+      "name": "Fresque du Bonheur Durable et Partage",
+      "description": "Play to become and make others a little happier"
     }
   },
   "talkAboutIt": {
