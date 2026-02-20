@@ -341,7 +341,7 @@ export const ATELIERS: Record<number, Atelier> = {
   },
   803: {
     code: 'AdACC',
-    logo: '/assets/images/logo/logo_AdACC.png',
+    logo: '/assets/images/logo/logo_AdACC.svg',
     name: i18n.global.t('workshops.AdACC.name'),
     description: i18n.global.t('workshops.AdACC.description'),
     promoted: true,
