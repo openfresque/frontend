@@ -3,7 +3,8 @@
     "de": "German",
     "en": "English",
     "fr": "French",
-    "es": "Spanish"
+    "es": "Spanish",
+    "it": "Italian"
   },
   "welcome": "Find a Fresk near you",
   "searchField": "City, Postal Code, Department...",
@@ -41,7 +42,9 @@
     "area": "Search area",
     "all": "all",
     "language": "Language",
-    "allLanguages": "All languages"
+    "languageOptional": "Language (optional)",
+    "allLanguages": "All languages",
+    "searchButton": "Search"
   },
   "results": {
     "workshop": "workshop",
@@ -296,7 +299,7 @@
   "homepage": {
     "hero": {
       "title": "We have the objective of developing the interaction between local groups and the global community to accelerate the spread of environmental raising-awareness workshops.",
-      "subtitle": "Welcome to Find a Fresk - a platform by and for the community. Not for profit.",
+      "subtitle": "Welcome to OpenFresque - a platform by and for the community. Not for profit.",
       "description": "We are an enthusiastic global movement of science-based workshop facilitators. We use tools such as the Climate Fresk workshops to engage people into meaningful action through awareness, system thinking and collective intelligence."
     },
     "movement": {

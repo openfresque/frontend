@@ -4,6 +4,31 @@ import { Strings } from '../utils/Strings'
 
 export const LANGUAGE_ALL = 'all'
 
+/**
+ * Encode an array of language codes into a URL segment.
+ * An empty array or [LANGUAGE_ALL] means "all languages" → no segment.
+ * Multiple codes are joined with a dot, e.g. `/lang-en.fr`.
+ */
+function buildLangSegment(languageCodes?: string[]): string {
+  if (
+    !languageCodes ||
+    languageCodes.length === 0 ||
+    languageCodes.includes(LANGUAGE_ALL)
+  ) {
+    return ''
+  }
+  return `/lang-${languageCodes.join('.')}`
+}
+
+/**
+ * Parse a languageCode route param back into an array of codes.
+ * If the param is absent/empty, returns [] (meaning "all").
+ */
+export function parseLangParam(languageCode: string | undefined): string[] {
+  if (!languageCode) return []
+  return languageCode.split('.').filter(Boolean)
+}
+
 export const rechercheDepartementDescriptor = {
   routerUrl:
     'dpt:codeDpt-:nomDpt/recherche-:typeRecherche/online-:includesOnline',
@@ -13,18 +38,14 @@ export const rechercheDepartementDescriptor = {
     codeDepartement,
     nomDepartement,
     searchType,
-    languageCode,
+    languageCodes,
   }: {
     codeDepartement: string
     nomDepartement: string
     searchType: SearchType
-    languageCode?: string
+    languageCodes?: string[]
   }) => {
-    const langSegment =
-      languageCode && languageCode !== LANGUAGE_ALL
-        ? `/lang-${languageCode}`
-        : ''
-    return `/dpt${codeDepartement}-${Strings.toReadableURLPathValue(nomDepartement)}/recherche-${searchType}/online-non${langSegment}`
+    return `/dpt${codeDepartement}-${Strings.toReadableURLPathValue(nomDepartement)}/recherche-${searchType}/online-non${buildLangSegment(languageCodes)}`
   },
 }
 
@@ -41,7 +62,7 @@ export const rechercheCommuneDescriptor = {
     nomCommune,
     tri,
     searchType,
-    languageCode,
+    languageCodes,
   }: {
     codeDepartement: string
     nomDepartement: string
@@ -50,12 +71,8 @@ export const rechercheCommuneDescriptor = {
     nomCommune: string
     tri: CodeTriCentre
     searchType: SearchType
-    languageCode?: string
+    languageCodes?: string[]
   }) => {
-    const langSegment =
-      languageCode && languageCode !== LANGUAGE_ALL
-        ? `/lang-${languageCode}`
-        : ''
-    return `/dpt${codeDepartement}-${Strings.toReadableURLPathValue(nomDepartement)}/commune${codeCommune}-${codePostal}-${Strings.toReadableURLPathValue(nomCommune)}/recherche-${searchType}/en-triant-par-${tri}/online-non${langSegment}`
+    return `/dpt${codeDepartement}-${Strings.toReadableURLPathValue(nomDepartement)}/commune${codeCommune}-${codePostal}-${Strings.toReadableURLPathValue(nomCommune)}/recherche-${searchType}/en-triant-par-${tri}/online-non${buildLangSegment(languageCodes)}`
   },
 }

@@ -3,7 +3,8 @@
     "de": "Allemand",
     "en": "Anglais",
     "fr": "Français",
-    "es": "Espagnol"
+    "es": "Espagnol",
+    "it": "Italien"
   },
   "welcome": "Trouvez une Fresque près de chez vous",
   "searchField": "Commune, Code postal, Département...",
@@ -41,7 +42,9 @@
     "area": "Rayon de recherche",
     "all": "Tout",
     "language": "Langue",
-    "allLanguages": "Toutes les langues"
+    "languageOptional": "Langue (optionnel)",
+    "allLanguages": "Toutes les langues",
+    "searchButton": "Rechercher"
   },
   "results": {
     "workshop": "atelier",
@@ -296,7 +299,7 @@
   "homepage": {
     "hero": {
       "title": "Nous avons pour objectif de développer la coopération entre les communautés locales et leur écosystème afin d'accélérer la diffusion des ateliers d'intelligence collective à l'international.",
-      "subtitle": "Bienvenue sur Trouver une Fresque, une plateforme par et pour la communauté. Sans but lucratif.",
+      "subtitle": "Bienvenue sur OpenFresque, une plateforme par et pour la communauté. Sans but lucratif.",
       "description": "Nous sommes un mouvement mondial enthousiaste de facilitateurs d'ateliers basés sur la science. Nous utilisons des outils tels que la Fresque du Climat pour engager les gens dans une action significative à travers la sensibilisation, la pensée systémique et l'intelligence collective."
     },
     "movement": {

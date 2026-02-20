@@ -3,7 +3,8 @@
     "de": "German",
     "en": "Inglés",
     "fr": "Francés",
-    "es": "Español"
+    "es": "Español",
+    "it": "Italiano"
   },
   "welcome": "Encuentra un Mural cerca de ti",
   "searchField": "Comuna, Código postal, Departamento...",
@@ -41,7 +42,9 @@
     "area": "Radio de búsqueda",
     "all": "Todo",
     "language": "Idioma",
-    "allLanguages": "Todos los idiomas"
+    "languageOptional": "Idioma (opcional)",
+    "allLanguages": "Todos los idiomas",
+    "searchButton": "Buscar"
   },
   "results": {
     "workshop": "taller",
@@ -284,7 +287,7 @@
   "homepage": {
     "hero": {
       "title": "Nuestro objetivo es desarrollar la cooperación entre las comunidades de facilitadores locales y sus ecosistemas para acelerar la difusión de los talleres de inteligencia colectiva a nivel internacional.",
-      "subtitle": "Te damos la bienvenida en Encuentra un Mural, una plataforma por y para la comunidad. Sin fines de lucro.",
+      "subtitle": "Te damos la bienvenida en OpenFresque, una plataforma por y para la comunidad. Sin fines de lucro.",
       "description": "Somos un movimiento entusiasta global de facilitadores de talleres basados en ciencia. Utilizamos herramientas como el taller Mural del Clima para implicar a las personas en acciones significativas por el planeta a través de la concienciación, el pensamiento sistémico y la inteligencia colectiva."
     },
     "movement": {

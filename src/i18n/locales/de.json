@@ -3,7 +3,8 @@
     "de": "Deutsch",
     "en": "Englisch",
     "fr": "Französich",
-    "es": "Spanisch"
+    "es": "Spanisch",
+    "it": "Italienisch"
   },
   "welcome": "Finden Sie einen Workshop in Ihrer Nähe",
   "searchField": "Stadt, Postleitzahl, Kanton...",
@@ -41,7 +42,9 @@
     "area": "Suchgereich",
     "all": "alle",
     "language": "Sprache",
-    "allLanguages": "Alle Sprachen"
+    "languageOptional": "Sprache (optional)",
+    "allLanguages": "Alle Sprachen",
+    "searchButton": "Suchen"
   },
   "results": {
     "workshop": "Workshop",
@@ -284,7 +287,7 @@
   "homepage": {
     "hero": {
       "title": "Unser Ziel ist es, die Interaktion zwischen Lokalen Gruppe und der globalen Gesellschaft zu fördern, um die Verbreitung von ansteckender Workshops zur Sensibilisierung für die Umwelt zu beschleunigen.",
-      "subtitle": "Willkommen bei Find a Fresk - eine Plattform von and für die Gesellschaft. Nicht gewinnorientiert.",
+      "subtitle": "Willkommen bei OpenFresque - eine Plattform von and für die Gesellschaft. Nicht gewinnorientiert.",
       "description": "Wir sind eine enthusiastische globale Bewegung von wissenschaftsbasierten Workshop-Moderatoren. Wir nutzen Instrumente vie die Klima-Puzzle Workshops, um Menschen durch Bewusstsein, Systemdenken and kollektive Intelligence zu sinnvollem Handeln zu bewegen."
     },
     "movement": {
