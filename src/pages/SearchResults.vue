@@ -322,7 +322,7 @@
 
     online.value = params.includesOnline === 'oui'
     tab.value = params.typeRecherche
-    language.value = params.languageCode || locale.value
+    language.value = params.languageCode || LANGUAGE_ALL
     // Allow watch to trigger updateRoute() again after syncing from route params
     await nextTick()
     skipRouteUpdate = false
