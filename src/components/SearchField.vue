@@ -1,21 +1,19 @@
 <template>
-  <div>
+  <div class="w-100">
     <router-view />
     <v-autocomplete
       class="search-field"
       ref="autocompleteRef"
       :label="t('searchField')"
-      max-width="500px"
       variant="solo"
       no-data-text="Aucun résultat"
       :items="autocompleteMatches"
       :return-object="true"
       :custom-filter="() => true"
       :model-value="modelValue"
-      @update:search="search"
-      @update:model-value="goToSearchResults"
-      @update:focused="setFocused"
-      clear-on-select
+      @update:model-value="onSelect"
+      @update:search="onSearch"
+      @update:focused="onFocused"
       auto-select-first
       hide-details
       density="comfortable"
@@ -34,7 +32,7 @@
       </template>
 
       <template #selection="{ item }">
-        <div v-if="!searchValue && !focused">
+        <div v-if="!typing && !focused">
           <strong
             >{{ item.props.codePostal
             }}{{ item.props.code_departement }}&nbsp;-&nbsp;</strong
@@ -46,14 +44,9 @@
 </template>
 
 <script lang="ts" setup>
-  import type { AutocompleteItem, Commune, Departement } from '@/state/State'
-  import { onMounted, ref } from 'vue'
+  import type { AutocompleteItem } from '@/state/State'
+  import { nextTick, onMounted, ref } from 'vue'
   import { useI18n } from 'vue-i18n'
-  import router from '@/router'
-  import {
-    rechercheCommuneDescriptor,
-    rechercheDepartementDescriptor,
-  } from '@/routing/DynamicURLs'
   import { State } from '@/state/State'
 
   const { t } = useI18n()
@@ -68,24 +61,33 @@
       type: Boolean,
       default: false,
     },
-    language: {
-      type: String,
-      required: false,
-      default: undefined,
-    },
   })
 
+  const emit = defineEmits<{
+    (e: 'update:modelValue', item: AutocompleteItem | null): void
+  }>()
+
   const autocompleteMatches = ref<AutocompleteItem[]>([])
-  const searchValue = ref<string | null>(null)
+  const typing = ref(false)
   const focused = ref(false)
   const autocompleteRef = ref<any>(null)
 
-  function setFocused(isFocused: boolean) {
+  function onSelect(selected: AutocompleteItem | null) {
+    typing.value = false
+    emit('update:modelValue', selected)
+    if (selected) {
+      nextTick(() => {
+        autocompleteRef.value?.blur()
+      })
+    }
+  }
+
+  function onFocused(isFocused: boolean) {
     focused.value = isFocused
   }
 
-  async function search(searchTerm: string | null) {
-    searchValue.value = searchTerm
+  async function onSearch(searchTerm: string | null) {
+    typing.value = !!searchTerm
     if (searchTerm === null) {
       autocompleteMatches.value = []
       return
@@ -99,62 +101,13 @@
     }))
   }
 
-  async function goToSearchResults(selected: AutocompleteItem | null) {
-    const autocomplete = document.querySelector('.v-autocomplete input')
-    if (autocomplete) {
-      ;(autocomplete as any).blur()
-    }
-
-    if (!selected) return
-
-    if ('codePostal' in selected.props) {
-      // search by commune
-      const com = selected.props as Commune
-      const nomDepartement = await State.current
-        .departementsDisponibles()
-        .then(
-          deps =>
-            deps.find(dep => dep.code_departement === com.codeDepartement)
-              ?.nom_departement
-        )
-      if (!nomDepartement) {
-        console.error('Could not find departement for commune', com)
-        return
-      }
-      const url = rechercheCommuneDescriptor.urlGenerator({
-        codeDepartement: com.codeDepartement,
-        nomDepartement,
-        codeCommune: com.code,
-        codePostal: com.codePostal,
-        nomCommune: com.nom,
-        tri: 'distance',
-        searchType: 'atelier',
-        languageCode: props.language,
-      })
-      console.log('Navigating to', url)
-      router.push(url)
-    } else {
-      // search by departement
-      const dpt = selected.props as Departement
-      const url = rechercheDepartementDescriptor.urlGenerator({
-        codeDepartement: dpt.code_departement,
-        nomDepartement: dpt.nom_departement,
-        searchType: 'atelier',
-        languageCode: props.language,
-      })
-      console.log('Navigating to', url)
-      router.push(url)
-    }
-  }
-
   onMounted(() => {
     if (props.modelValue) {
-      search(props.modelValue.title)
+      onSearch(props.modelValue.title)
     } else {
-      search('')
+      onSearch('')
     }
 
-    // Focus the input element on mount if autofocus prop is true
     if (props.autofocus) {
       autocompleteRef.value?.focus()
     }

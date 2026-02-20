@@ -87,7 +87,6 @@
   import type { Workshop, CodeDepartement, SearchType } from '@/common/Conf'
   import { onMounted, ref } from 'vue'
   import { useI18n } from 'vue-i18n'
-  import { LANGUAGE_ALL } from '@/routing/DynamicURLs'
   import distanceBetween from '@/utils/distance'
 
   const { t } = useI18n()
@@ -114,10 +113,10 @@
       required: false,
       default: false,
     },
-    language: {
-      type: String,
+    languages: {
+      type: Array as PropType<string[]>,
       required: false,
-      default: LANGUAGE_ALL,
+      default: () => [],
     },
     locationTitle: {
       type: String,
@@ -191,11 +190,12 @@
 
   function filterWorkshops() {
     filteredWorkshops.value = props.workshops.filter((workshop: Workshop) => {
-      // language filter: keep if no language_code on the record, or if it matches
+      // language filter: empty array = all languages; otherwise keep if
+      // the record has no language_code or its code is in the selected list
       if (
-        props.language !== LANGUAGE_ALL &&
+        props.languages.length > 0 &&
         workshop.language_code &&
-        workshop.language_code !== props.language
+        !props.languages.includes(workshop.language_code)
       ) {
         return false
       }
@@ -283,7 +283,7 @@
       props.latitude,
       props.workshopType,
       props.online,
-      props.language,
+      props.languages,
     ],
     newVal => {
       filteredWorkshops.value = []

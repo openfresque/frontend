@@ -20,15 +20,18 @@
 
         <!-- language filter -->
         <v-select
-          class="mt-2"
-          v-model="language"
+          class="mt-2 language-select"
+          v-model="languages"
           :items="languageItems"
           item-title="title"
           item-value="value"
-          :label="t('search.language')"
+          :label="t('search.languageOptional')"
           variant="outlined"
           hide-details
           density="comfortable"
+          multiple
+          chips
+          closable-chips
         ></v-select>
 
         <!-- search radius -->
@@ -117,7 +120,7 @@
             :search-radius="tickDistances[distance]"
             :workshop-type="'atelier'"
             :online="online"
-            :language="language"
+            :languages="languages"
             :location-title="getLocationTitle()"
             :last-update-date="lastUpdateDate"
             :search-by-dpt="isSearchByDpt()"
@@ -134,7 +137,7 @@
             :search-radius="tickDistances[distance]"
             :workshop-type="'formation'"
             :online="online"
-            :language="language"
+            :languages="languages"
             :location-title="getLocationTitle()"
             :last-update-date="lastUpdateDate"
             :search-by-dpt="isSearchByDpt()"
@@ -152,7 +155,7 @@
             :search-radius="tickDistances[distance]"
             :workshop-type="'junior'"
             :online="online"
-            :language="language"
+            :languages="languages"
             :location-title="getLocationTitle()"
             :last-update-date="lastUpdateDate"
             :search-by-dpt="isSearchByDpt()"
@@ -172,25 +175,24 @@
   import { useI18n } from 'vue-i18n'
   import router, { ROUTE_SEARCH_CITY, ROUTE_SEARCH_DPT } from '@/router'
   import {
-    LANGUAGE_ALL,
+    parseLangParam,
     rechercheCommuneDescriptor,
     rechercheDepartementDescriptor,
   } from '@/routing/DynamicURLs'
   import { State } from '@/state/State'
 
-  const { t, locale } = useI18n()
+  const { t } = useI18n()
 
   const supportedLocales = import.meta.env.VITE_SUPPORTED_LOCALES.split(
     ','
   ) as string[]
 
-  const languageItems = computed(() => [
-    { title: t('search.allLanguages'), value: LANGUAGE_ALL },
-    ...supportedLocales.map((loc: string) => ({
+  const languageItems = computed(() =>
+    supportedLocales.map((loc: string) => ({
       title: t(`locale.${loc}`),
       value: loc,
-    })),
-  ])
+    }))
+  )
 
   const searchItem = ref<AutocompleteItem>({
     value: 0,
@@ -229,14 +231,58 @@
   const selectedDpt = ref<Departement | undefined>(undefined)
   const distance = ref(2)
   const online = ref(false)
-  const language = ref(LANGUAGE_ALL)
+  const languages = ref<string[]>([])
   const tab = ref('atelier')
   const isLoading = ref(false)
   let skipRouteUpdate = false
 
-  watch([online, tab, language], () => {
+  watch([online, tab, languages], () => {
     if (skipRouteUpdate) return
     updateRoute()
+  })
+
+  watch(searchItem, async newItem => {
+    if (skipRouteUpdate || !newItem || newItem.value === -1) return
+
+    if ('codePostal' in newItem.props) {
+      const com = newItem.props as Commune
+      const nomDepartement = await State.current
+        .departementsDisponibles()
+        .then(
+          deps =>
+            deps.find(dep => dep.code_departement === com.codeDepartement)
+              ?.nom_departement
+        )
+      if (!nomDepartement) return
+      let url = rechercheCommuneDescriptor.urlGenerator({
+        codeDepartement: com.codeDepartement,
+        nomDepartement,
+        codeCommune: com.code,
+        codePostal: com.codePostal,
+        nomCommune: com.nom,
+        tri: 'distance',
+        searchType: tab.value as SearchType,
+        languageCodes: languages.value,
+      })
+      url = url.replace(
+        '/online-non',
+        `/online-${online.value ? 'oui' : 'non'}`
+      )
+      router.push(url)
+    } else {
+      const dpt = newItem.props as Departement
+      let url = rechercheDepartementDescriptor.urlGenerator({
+        codeDepartement: dpt.code_departement,
+        nomDepartement: dpt.nom_departement,
+        searchType: tab.value as SearchType,
+        languageCodes: languages.value,
+      })
+      url = url.replace(
+        '/online-non',
+        `/online-${online.value ? 'oui' : 'non'}`
+      )
+      router.push(url)
+    }
   })
 
   function updateRoute() {
@@ -251,14 +297,14 @@
         nomCommune: params.nomCommune,
         tri: params.codeTriCentre,
         searchType: tab.value as SearchType,
-        languageCode: language.value,
+        languageCodes: languages.value,
       })
     } else {
       url = rechercheDepartementDescriptor.urlGenerator({
         codeDepartement: params.codeDpt,
         nomDepartement: params.nomDpt,
         searchType: tab.value as SearchType,
-        languageCode: language.value,
+        languageCodes: languages.value,
       })
     }
     // Include online param
@@ -322,7 +368,7 @@
 
     online.value = params.includesOnline === 'oui'
     tab.value = params.typeRecherche
-    language.value = params.languageCode || LANGUAGE_ALL
+    languages.value = parseLangParam(params.languageCode as string)
     // Allow watch to trigger updateRoute() again after syncing from route params
     await nextTick()
     skipRouteUpdate = false
@@ -391,6 +437,14 @@
       white-space: wrap !important;
       font-size: 0.7rem !important;
     }
+  }
+
+  .language-select :deep(.v-chip) {
+    margin: 6px 4px;
+  }
+
+  .language-select :deep(.v-select__selection) {
+    margin: 4px 0;
   }
 
   .online-switch {
