@@ -43,9 +43,9 @@
           </v-card-text>
           <v-card-text
             class="text-language"
-            v-if="props.international"
+            v-if="workshop.language_code"
           >
-            Language: {{ getFlagEmoji(props.languageCode, 'language') }}
+            {{ t('search.language') }}: {{ t(`locale.${workshop.language_code}`) }} {{ getFlagEmoji(workshop.language_code, 'language') }}
           </v-card-text>
         </v-col>
 
@@ -218,6 +218,20 @@
 
     @media screen and (max-width: 600px) {
       font-size: 0.85rem;
+    }
+  }
+
+  .text-language {
+    font-size: 0.95rem;
+    line-height: normal;
+    font-weight: 400;
+
+    @media screen and (max-width: 960px) {
+      font-size: 0.85rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 0.8rem;
     }
   }
 </style>
