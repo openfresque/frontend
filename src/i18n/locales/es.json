@@ -8,7 +8,7 @@
   },
   "welcome": "Encuentra un Mural cerca de ti",
   "searchField": "Comuna, Código postal, Departamento...",
-  "banner": "¡Encuentra un Mural pronto se internacionalizará! Mientras tanto, ¡visita la <a href=\"https://www.findafresk.org\">página del proyecto</a> y síguenos en <a href=\"https://www.linkedin.com/company/trouver-une-fresque\">LinkedIn</a>!",
+  "banner": "¡Encuentra un Mural pronto se internacionalizará! Mientras tanto, ¡visita la <a href=\"https://www.findafresk.org\">página del proyecto</a> y síguenos en <a href=\"https://www.linkedin.com/company/openfresque\">LinkedIn</a>!",
   "footer": "Encuentra un Mural no es una herramienta oficial de búsqueda de talleres, NO es exhaustiva y no reemplaza una búsqueda manual, especialmente en el caso en que no se muestre ningún taller disponible en nuestro sitio web.",
   "navigation": {
     "home": "Inicio",
@@ -286,12 +286,15 @@
   },
   "homepage": {
     "hero": {
-      "title": "Nuestro objetivo es desarrollar la cooperación entre las comunidades de facilitadores locales y sus ecosistemas para acelerar la difusión de los talleres de inteligencia colectiva a nivel internacional.",
+      "title": "Nuestro objetivo es desarrollar la cooperación entre las comunidades de facilitadores locales y sus ecosistemas para acelerar la difusión de los talleres de inteligencia colectiva 🌎",
       "subtitle": "Te damos la bienvenida en OpenFresque, una plataforma por y para la comunidad. Sin fines de lucro.",
-      "description": "Somos un movimiento entusiasta global de facilitadores de talleres basados en ciencia. Utilizamos herramientas como el taller Mural del Clima para implicar a las personas en acciones significativas por el planeta a través de la concienciación, el pensamiento sistémico y la inteligencia colectiva."
+      "description": "Somos un movimiento entusiasta global de facilitadores de talleres basados en ciencia. Utilizamos herramientas como el taller Mural del Clima para implicar a las personas en acciones significativas por el planeta a través de la concienciación, el pensamiento sistémico y la inteligencia colectiva.",
+      "history1": "El proyecto OpenFresque se constituyó de manera orgánica. La aventura comenzó en 2023 con la publicación de la herramienta {toolName}, que impulsó una dinámica de cooperación entre asociaciones y voluntarios al servicio de la transición socio-ecológica.",
+      "history2": "Nuestro grupo de trabajo multi-talleres reunió rápidamente a una comunidad internacional, con miembros de una decena de países. Hemos realizado un trabajo de cartografía de las iniciativas existentes y de puesta en común de recursos que puedes explorar aquí.",
+      "toolName": "Encuentra un Mural"
     },
     "movement": {
-      "title": "Un movimiento mundial para el aprendizaje vivencial",
+      "title": "¡Todos los Murales del mundo en un solo lugar!",
       "button": "Encuentra un Mural"
     },
     "collaboration": {
@@ -303,7 +306,8 @@
       "title": "¡Mapeo de grupos en todo el mundo!",
       "description": "Estamos tratando de compilar una lista de todos los grupos multi-murales en todo el mundo. Nuestro objetivo es dar visibilidad a estos grupos en todo el mundo.",
       "button": "Descubrir los grupos locales"
-    }
+    },
+    "linkedin": "¡No dudes en seguirnos en LinkedIn si aún no lo has hecho!"
   },
   "taskforce": {
     "title": "El grupo de trabajo multi-talleres-mural",
@@ -342,9 +346,9 @@
       "consulting": {
         "question": "¿Eres responsable de un taller o grupo local?",
         "understand": "Lanzamos una convocatoria para hablar de las distintas formas en que se crean las estructuras multi-taller a escala internacional. Nos dimos cuenta de que teníamos desafíos comunes y aún más lecciones que compartir. Queremos entender...",
-        "point1": "Su \"stack/pila tecnológica\".",
-        "point2": "Tus desafíos.",
-        "point3": "Las necesidades de tus facilitadores.",
+        "point1": "Su \"stack/pila tecnológica\"",
+        "point2": "Tus desafíos",
+        "point3": "Las necesidades de tus facilitadores",
         "support": "…en cómo apoyas a tu comunidad de facilitadores para realizar talleres."
       },
       "mapping": {

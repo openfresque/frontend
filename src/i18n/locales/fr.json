@@ -8,7 +8,7 @@
   },
   "welcome": "Trouvez une Fresque près de chez vous",
   "searchField": "Commune, Code postal, Département...",
-  "banner": "Trouver une Fresque va bientôt s'internationaliser ! En attendant, rendez-vous sur la <a href=\"https://www.findafresk.org\">page du projet</a>, et suivez-nous sur <a href=\"https://www.linkedin.com/company/trouver-une-fresque\">LinkedIn</a> !",
+  "banner": "Trouver une Fresque va bientôt s'internationaliser ! En attendant, rendez-vous sur la <a href=\"https://www.findafresk.org\">page du projet</a>, et suivez-nous sur <a href=\"https://www.linkedin.com/company/openfresque\">LinkedIn</a> !",
   "footer": "Trouver une Fresque n'est pas un outil officiel, n'est PAS exhaustif et ne remplace pas une recherche manuelle notamment dans le cas où aucun atelier disponible n'est proposé sur notre site.",
   "navigation": {
     "home": "Accueil",
@@ -298,12 +298,15 @@
   },
   "homepage": {
     "hero": {
-      "title": "Nous avons pour objectif de développer la coopération entre les communautés locales et leur écosystème afin d'accélérer la diffusion des ateliers d'intelligence collective à l'international.",
+      "title": "Nous avons pour objectif de développer la coopération entre les communautés locales et leur écosystème afin d'accélérer la diffusion des ateliers d'intelligence collective 🌎",
       "subtitle": "Bienvenue sur OpenFresque, une plateforme par et pour la communauté. Sans but lucratif.",
-      "description": "Nous sommes un mouvement mondial enthousiaste de facilitateurs d'ateliers basés sur la science. Nous utilisons des outils tels que la Fresque du Climat pour engager les gens dans une action significative à travers la sensibilisation, la pensée systémique et l'intelligence collective."
+      "description": "Nous sommes un mouvement mondial enthousiaste de facilitateurs d'ateliers basés sur la science. Nous utilisons des outils tels que la Fresque du Climat pour engager les gens dans une action significative à travers la sensibilisation, la pensée systémique et l'intelligence collective.",
+      "history1": "Le projet OpenFresque s'est constitué de manière organique. L'aventure a commencé en 2023 avec la publication de l'outil {toolName}, qui a insufflé une dynamique de coopération entre associations et bénévoles au service de la transition socio-écologique.",
+      "history2": "Notre groupe de travail multi-ateliers a rapidement fédéré une communauté à l'international, avec des membres issus d'une dizaine de pays. Nous avons fait un travail de cartographie des initiatives existantes et de mise en commun de ressources que vous pouvez explorer ici !",
+      "toolName": "Trouver une Fresque"
     },
     "movement": {
-      "title": "Un mouvement mondial d'apprentissage par l'expérience",
+      "title": "Toutes les Fresques du monde au même endroit !",
       "button": "Trouver une Fresque"
     },
     "collaboration": {
@@ -315,7 +318,8 @@
       "title": "Cartographier les groupes à travers le monde !",
       "description": "Nous essayons de compiler une liste de tous les groupes multi-ateliers à travers le monde. Nous visons à donner de la visibilité à ces groupes dans le monde entier.",
       "button": "Découvrir les groupes locaux"
-    }
+    },
+    "linkedin": "N'hésitez pas à nous suivre sur LinkedIn si ce n'est pas déjà fait !"
   },
   "taskforce": {
     "title": "Le groupe de travail multi-ateliers",
@@ -354,9 +358,9 @@
       "consulting": {
         "question": "Êtes-vous responsable d'un atelier ou d'un groupe local ?",
         "understand": "Nous avons lancé un appel pour parler des différentes manières dont les structures multi-ateliers se mettent en place à l'international. Nous avons réalisé que nous avions des points de friction communs et encore plus de leçons à partager. Nous voulons comprendre…",
-        "point1": "Votre \"stack technologique\"",
-        "point2": "Vos points de friction.",
-        "point3": "Les besoins de vos animateurs.",
+        "point1": "Votre \"pile technologique\"",
+        "point2": "Vos points de friction",
+        "point3": "Les besoins de vos animateurs",
         "support": "… dans la manière dont vous soutenez votre communauté d'animateurs pour organiser des ateliers."
       },
       "mapping": {

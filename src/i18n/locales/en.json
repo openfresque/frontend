@@ -8,7 +8,7 @@
   },
   "welcome": "Find a Fresk near you",
   "searchField": "City, Postal Code, Department...",
-  "banner": "Find a Fresk will soon be internationalized! In the meantime, visit the <a href=\"https://www.findafresk.org\">project page</a>, and follow us on <a href=\"https://www.linkedin.com/company/trouver-une-fresque\">LinkedIn</a>!",
+  "banner": "Find a Fresk will soon be internationalized! In the meantime, visit the <a href=\"https://www.findafresk.org\">project page</a>, and follow us on <a href=\"https://www.linkedin.com/company/openfresque\">LinkedIn</a>!",
   "footer": "Find a Fresk is not an official tool, is NOT exhaustive, and does not replace manual searches, especially when no available workshops are listed on our site.",
   "navigation": {
     "home": "Home",
@@ -298,12 +298,15 @@
   },
   "homepage": {
     "hero": {
-      "title": "We have the objective of developing the interaction between local groups and the global community to accelerate the spread of environmental raising-awareness workshops.",
+      "title": "We have the objective of developing the interaction between local groups and the global community to accelerate the spread of environmental raising-awareness workshops 🌎",
       "subtitle": "Welcome to OpenFresque - a platform by and for the community. Not for profit.",
-      "description": "We are an enthusiastic global movement of science-based workshop facilitators. We use tools such as the Climate Fresk workshops to engage people into meaningful action through awareness, system thinking and collective intelligence."
+      "description": "We are an enthusiastic global movement of science-based workshop facilitators. We use tools such as the Climate Fresk workshops to engage people into meaningful action through awareness, system thinking and collective intelligence.",
+      "history1": "The OpenFresque project grew organically. The adventure began in 2023 with the launch of the {toolName} tool, which sparked a dynamic of cooperation between associations and volunteers in service of the socio-ecological transition.",
+      "history2": "Our multi-workshop taskforce quickly brought together an international community, with members from about ten countries. We have mapped existing initiatives and pooled resources that you can explore here!",
+      "toolName": "Find a Fresk"
     },
     "movement": {
-      "title": "Climate Fresk has sparked a global movement of experience-based learning",
+      "title": "All the Fresks in the world in one place!",
       "button": "Find a Fresk"
     },
     "collaboration": {
@@ -315,7 +318,8 @@
       "title": "Mapping groups around the World!",
       "description": "Are you part of a local group / NGO delivering workshops? We are trying to compile a list of all the Multi-Workshop groups around the world. We aim to bring visibility to these groups worldwide.",
       "button": "Discover local groups"
-    }
+    },
+    "linkedin": "Don't hesitate to follow us on LinkedIn if you haven't already!"
   },
   "taskforce": {
     "title": "The Taskforce",
@@ -355,8 +359,8 @@
         "question": "Are you responsible for a workshop or a local community?",
         "understand": "We put out a call to talk about the different ways people are Multi-Fresking internationally. We realised we have some shared pain points and even more lessons to share. We want to understand…",
         "point1": "Your tech stack",
-        "point2": "Your pain points.",
-        "point3": "Your facilitators' needs.",
+        "point2": "Your pain points",
+        "point3": "Your facilitators' needs",
         "support": "… in how you support your facilitator community to organise workshops."
       },
       "mapping": {

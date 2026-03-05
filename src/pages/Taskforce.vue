@@ -165,6 +165,37 @@
           </div>
         </div>
       </section>
+
+      <!-- Events gallery -->
+      <section class="mb-12 px-4">
+        <v-carousel
+          show-arrows="hover"
+          height="400"
+          hide-delimiter-background
+          delimiter-icon="mdi-circle-small"
+          cycle
+        >
+          <v-carousel-item
+            v-for="(event, i) in events"
+            :key="i"
+          >
+            <v-img
+              class="align-end"
+              :src="event.image"
+              height="400"
+              cover
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.8)"
+            >
+              <div class="event-caption pa-4">
+                <h3 class="text-h4 text-white mb-2">{{ event.title }}</h3>
+                <p class="text-subtitle-1 text-white">
+                  {{ event.description }}
+                </p>
+              </div>
+            </v-img>
+          </v-carousel-item>
+        </v-carousel>
+      </section>
     </div>
   </v-container>
 </template>
@@ -174,7 +205,33 @@
 
   const { t } = useI18n()
 
-  // No longer using the 'sections' array as content is explicit
+  const events = [
+    {
+      image: '/assets/images/events/1001-fresques-lyon-2023.jpg',
+      title: '1001 Fresques Lyon 2023',
+      description: '',
+    },
+    {
+      image: '/assets/images/events/1001-fresques-lyon-2024.jpg',
+      title: '1001 Fresques Lyon 2024',
+      description: '',
+    },
+    {
+      image: '/assets/images/events/climate-fresk-cop28.jpg',
+      title: 'Climate Fresk COP28',
+      description: '',
+    },
+    {
+      image: '/assets/images/events/equinox-stockholm.jpg',
+      title: 'Equinox Stockholm',
+      description: '',
+    },
+    {
+      image: '/assets/images/events/mural-fest-barcelona.jpg',
+      title: 'Mural Fest Barcelona',
+      description: '',
+    },
+  ]
 </script>
 
 <style scoped lang="scss">

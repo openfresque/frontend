@@ -202,7 +202,7 @@
         },
         {
           id: 54,
-          href: 'https://www.linkedin.com/company/trouver-une-fresque',
+          href: 'https://www.linkedin.com/company/openfresque',
           textKey: 'navigation.communityNews',
           icon: 'mdi-newspaper-variant-outline',
           external: true,

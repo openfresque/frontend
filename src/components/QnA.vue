@@ -14,7 +14,6 @@
       >
         <h3 v-html="t(`qa.sections.${key}.title`)"></h3>
         <p v-html="t(`qa.sections.${key}.description`)"></p>
-        <v-divider></v-divider>
       </div>
     </div>
   </div>

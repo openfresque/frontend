@@ -15,7 +15,7 @@
             sm="auto"
           >
             <a
-              href="https://github.com/trouver-une-fresque/multiworkshop-taskforce-front/blob/main/LICENSE"
+              href="https://github.com/openfresque/frontend/blob/main/LICENSE"
               style="text-decoration: none; color: inherit"
               >{{ t('buttons.license') }}</a
             >

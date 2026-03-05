@@ -1,32 +1,40 @@
 <template>
   <v-container max-width="1200px">
-    <!-- search card section -->
-    <section class="px-4">
-      <v-card
-        class="search-card pa-4 pa-sm-12 mt-16 mb-16"
-        elevation="4"
-        rounded="xl"
+    <!-- LinkedIn banner -->
+    <section class="px-4 mb-6">
+      <v-banner
+        class="rounded-lg"
+        lines="one"
+        color="primary"
       >
-        <v-card-title
-          class="d-flex justify-center pt-4"
-          max-width="700px"
-        >
-          <h2
-            style="text-wrap-mode: wrap; max-width: 700px; text-align: center"
+        <template #text>
+          {{ t('homepage.linkedin') }}
+        </template>
+        <template #actions>
+          <v-btn
+            color="primary"
+            variant="tonal"
+            href="https://www.linkedin.com/company/openfresque"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {{ t('welcome') }}
-          </h2>
-        </v-card-title>
-        <v-card-text class="d-flex justify-center pt-6 pb-4">
-          <SearchBoxes />
-        </v-card-text>
-      </v-card>
+            LinkedIn
+            <v-icon end>mdi-open-in-new</v-icon>
+          </v-btn>
+        </template>
+      </v-banner>
     </section>
 
     <!-- Hero section -->
     <section class="mb-12 px-4">
       <p>{{ t('homepage.hero.subtitle') }}</p>
       <h1 class="text-h6 mb-6">{{ t('homepage.hero.title') }}</h1>
+      <p>
+        {{
+          t('homepage.hero.history1', { toolName: t('homepage.hero.toolName') })
+        }}
+      </p>
+      <p>{{ t('homepage.hero.history2') }}</p>
     </section>
 
     <!-- Climate Fresk movement, Collaboration, and Mapping groups sections in 3 columns -->
@@ -134,71 +142,32 @@
       </v-col>
     </v-row>
 
-    <!-- Events gallery -->
-    <section class="mb-12 px-4">
-      <v-carousel
-        show-arrows="hover"
-        height="400"
-        hide-delimiter-background
-        delimiter-icon="mdi-circle-small"
-        cycle
-      >
-        <v-carousel-item
-          v-for="(event, i) in events"
-          :key="i"
+    <!-- search card section -->
+    <section class="px-4">
+      <v-card class="search-card pa-2 pa-sm-10 mt-12 mb-12">
+        <v-card-title
+          class="d-flex justify-center"
+          max-width="600px"
         >
-          <v-img
-            class="align-end"
-            :src="event.image"
-            height="400"
-            cover
-            gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.8)"
+          <h2
+            style="text-wrap-mode: wrap; max-width: 600px; text-align: center"
           >
-            <div class="event-caption pa-4">
-              <h3 class="text-h4 text-white mb-2">{{ event.title }}</h3>
-              <p class="text-subtitle-1 text-white">{{ event.description }}</p>
-            </div>
-          </v-img>
-        </v-carousel-item>
-      </v-carousel>
+            {{ t('welcome') }}
+          </h2>
+        </v-card-title>
+        <v-card-text class="d-flex justify-center">
+          <SearchBoxes />
+        </v-card-text>
+      </v-card>
     </section>
   </v-container>
 </template>
 
 <script lang="ts" setup>
-  import { ref } from 'vue'
   import { useI18n } from 'vue-i18n'
   import SearchBoxes from '@/components/SearchBoxes.vue'
 
   const { t } = useI18n()
-
-  const events = ref([
-    {
-      title: 'Mural Fest - Barcelona 2024',
-      description: 'A global gathering of workshop facilitators',
-      image: '/assets/images/events/mural-fest-barcelona.jpg',
-    },
-    {
-      title: '1001 fresques - Lyon Nov 2024',
-      description: 'Join this exceptional event in France',
-      image: '/assets/images/events/1001-fresques-lyon-2024.jpg',
-    },
-    {
-      title: 'Climate Fresk at COP28',
-      description: 'Taking climate action to international level',
-      image: '/assets/images/events/climate-fresk-cop28.jpg',
-    },
-    {
-      title: '1001 fresques - Lyon 2023',
-      description: "The success of last year's event",
-      image: '/assets/images/events/1001-fresques-lyon-2023.jpg',
-    },
-    {
-      title: 'Equinox festival - Stockholm 2024',
-      description: 'Celebrating sustainability workshops in Scandinavia',
-      image: '/assets/images/events/equinox-stockholm.jpg',
-    },
-  ])
 </script>
 
 <style lang="scss" scoped>
